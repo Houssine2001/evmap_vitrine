@@ -18,9 +18,9 @@ export default function Header({ activeSection, scrollToSection }) {
 
   const menuItems = [
     { id: 'accueil', label: 'Accueil' },
-    { id: 'mockup', label: 'Application' },
-    { id: 'tutoriel', label: 'Tutoriel' },
-    { id: 'fonctionnalites', label: 'Fonctionnalités' },
+    { id: 'application', label: 'Application' },
+    
+    { id: 'technologie', label: 'Technologies' },
     { id: 'equipe', label: 'Équipe' },
     { id: 'contact', label: 'Contact' }
   ];

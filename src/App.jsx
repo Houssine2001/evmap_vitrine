@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from "react";
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import './styles/main.css';
 import Home from "./assets/images/home.png";
+import Cart from "/src/assets/images/cart.png";
 
 function App() {
   const [activeSection, setActiveSection] = useState('accueil');
@@ -19,6 +20,16 @@ function App() {
   const handleTabChange = (tabId) => {
     setActiveTab(tabId);
   };
+const images = [Home, Cart];
+const [currentImage, setCurrentImage] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  }, 7000);
+
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <div className="evmap-app">
@@ -53,7 +64,7 @@ function App() {
           </div>
         </div>
         <div className="hero-cta">
-          <button className="btn btn-primary" onClick={() => scrollToSection('solution')}>
+          <button className="btn btn-primary" >
   <svg
     className="playstore-icon"
     viewBox="0 0 512 512"
@@ -106,7 +117,7 @@ function App() {
   Télécharger l’application
 </button>
 
-          <button className="btn btn-secondary" onClick={() => scrollToSection('mockup')}>
+          <button className="btn btn-secondary" onClick={() => scrollToSection('solution')}>
             <span className="btn-icon">⚡</span>
             Découvrir la solution
           </button>
@@ -117,11 +128,11 @@ function App() {
         <div className="app-mockup-container">
         
             
-            <img 
-              src={Home} 
-              alt="Interface EVMapyTN - Application de recharge électrique en Tunisie"
-              className="app-screenshot"
-            />
+          <img 
+  src={images[currentImage]}
+  alt="Interface EVMapyTN - Application de recharge électrique en Tunisie"
+  className="app-screenshot fade-animation"
+/>
             {/* Bottom Navigation Tabs */}
            
 
@@ -317,7 +328,7 @@ function App() {
   </div>
 </section>
 
-       <section id="mockup" className="section cat-interface">
+       <section id="application"  className="section cat-interface">
   <div className="container">
     <div className="cat-header">
       <h2 className="cat-title">
@@ -332,14 +343,14 @@ function App() {
     <div className="cat-interface-showcase">
       <div className="cat-interface-main">
         <div className="cat-phone-container">
-          <div className="cat-phone">
-            <div className="cat-phone-notch"></div>
+        
+            
             <img 
-              src="/path-to-your-main-screen.png" 
+              src="/src/assets/images/home.png" 
               alt="Écran principal EVMapTN"
               className="cat-phone-screen"
             />
-          </div>
+          
           <div className="cat-interface-label">
             <h3>Écran principal</h3>
            
@@ -376,7 +387,7 @@ function App() {
     
     {/* App Screens Grid */}
     <div className="cat-app-screens">
-      <h3 className="cat-screens-title">Les Interfaces de l'application</h3>
+      <h3 className="cat-screens-title">Les Autres Interfaces</h3>
       
       <div className="cat-screens-grid">
         {/* Screen 1 - Search */}
@@ -407,7 +418,7 @@ function App() {
           <div className="cat-screen-preview">
             <div className="cat-screen-frame">
               <img 
-                src="/path-to-reservation-screen.png" 
+                src="/src/assets/images/reservation.png" 
                 alt="Réservation EVMapTN"
                 className="cat-screen-image"
               />
@@ -425,42 +436,42 @@ function App() {
           </div>
         </div>
         
-        {/* Screen 3 - Charging */}
-        <div className="cat-screen-card">
-          <div className="cat-screen-preview">
-            <div className="cat-screen-frame">
-              <img 
-                src="/path-to-charging-screen.png" 
-                alt="Chargement EVMapTN"
-                className="cat-screen-image"
-              />
-            </div>
-            <div className="cat-screen-info">
-              <div className="cat-screen-number">03</div>
-              <h4>Suivi de recharge</h4>
-              <p>Surveillez votre session en temps réel</p>
-              <ul className="cat-screen-features">
-                <li>Progression en direct</li>
-                <li>Estimation de durée</li>
-                <li>Notifications push</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      {/* Screen 3 - Payment */}
+<div className="cat-screen-card">
+  <div className="cat-screen-preview">
+    <div className="cat-screen-frame">
+      <img 
+        src="/src/assets/images/paiement.png" 
+        alt="Paiement EVMapTN"
+        className="cat-screen-image"
+      />
+    </div>
+    <div className="cat-screen-info">
+      <div className="cat-screen-number">03</div>
+      <h4>Paiement sécurisé</h4>
+      <p>Transactions rapides et sécurisées</p>
+      <ul className="cat-screen-features">
+        <li>Multiples modes de paiement</li>
+        <li>Validation instantanée</li>
+        <li>Reçu électronique</li>
+      </ul>
+    </div>
+  </div>
+</div>
         
         {/* Screen 4 - History */}
         <div className="cat-screen-card">
           <div className="cat-screen-preview">
             <div className="cat-screen-frame">
               <img 
-                src="/path-to-history-screen.png" 
+                src="/src/assets/images/historique.png" 
                 alt="Historique EVMapTN"
                 className="cat-screen-image"
               />
             </div>
             <div className="cat-screen-info">
               <div className="cat-screen-number">04</div>
-              <h4>Historique & paiements</h4>
+              <h4>Historique Recharges & paiements</h4>
               <p>Consultez vos sessions et dépenses</p>
               <ul className="cat-screen-features">
                 <li>Détails des recharges</li>
@@ -477,323 +488,467 @@ function App() {
     
   </div>
 </section>
-        {/* Video Tutorial Section */}
-        <section id="tutoriel" className="section video-section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Comment utiliser EVMapyTN en 2 minutes</h2>
-              <p className="section-subtitle">Découvrez comment simplifier votre recharge électrique avec notre tutoriel vidéo</p>
-            </div>
-            
-            <div className="video-container">
-              <div className="video-player">
-                {/* Video Placeholder - Replace with actual video */}
-                <div className="video-placeholder">
-                  <div className="play-button">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="40" cy="40" r="40" fill="#0066FF" fillOpacity="0.1"/>
-                      <circle cx="40" cy="40" r="30" fill="#0066FF"/>
-                      <path d="M50 40L34 48V32L50 40Z" fill="white"/>
-                    </svg>
-                  </div>
-                  <div className="video-overlay">
-                    <h3>Tutoriel EVMapTN</h3>
-                    <p>Comment trouver, réserver et payer votre recharge</p>
-                  </div>
-                </div>
-                
-                <div className="video-info">
-                  <div className="video-duration">2:30</div>
-                  <div className="video-quality">HD</div>
-                </div>
-              </div>
-              
-              <div className="video-steps">
-                <h3>Étapes principales démontrées</h3>
-                <div className="steps-list">
-                  <div className="step-item">
-                    <div className="step-number">1</div>
-                    <div className="step-content">
-                      <h4>Recherche de bornes</h4>
-                      <p>Utilisez la carte interactive pour trouver les bornes disponibles près de vous</p>
-                    </div>
-                  </div>
-                  <div className="step-item">
-                    <div className="step-number">2</div>
-                    <div className="step-content">
-                      <h4>Réservation</h4>
-                      <p>Réservez votre borne en un clic et sécurisez votre créneau</p>
-                    </div>
-                  </div>
-                  <div className="step-item">
-                    <div className="step-number">3</div>
-                    <div className="step-content">
-                      <h4>Navigation</h4>
-                      <p>Suivez les instructions GPS vers la borne réservée</p>
-                    </div>
-                  </div>
-                  <div className="step-item">
-                    <div className="step-number">4</div>
-                    <div className="step-content">
-                      <h4>Paiement</h4>
-                      <p>Payez directement depuis l'application de manière sécurisée</p>
-                    </div>
-                  </div>
-                  <div className="step-item">
-                    <div className="step-number">5</div>
-                    <div className="step-content">
-                      <h4>Suivi</h4>
-                      <p>Surveillez votre recharge en temps réel et recevez des notifications</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="video-cta">
-              <button className="btn btn-primary">
-                <span>🎥 Voir la démo complète</span>
-              </button>
-              <button className="btn btn-outline">
-                <span>📱 Télécharger l'app</span>
-              </button>
-            </div>
-          </div>
-        </section>
+      
+       
 
-        {/* Features Section */}
-        <section id="fonctionnalites" className="section features-section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Fonctionnalités clés</h2>
-              <p className="section-subtitle">Tout ce dont vous avez besoin pour une recharge intelligente</p>
-            </div>
-            
-            <div className="features-grid">
-              {[
-                {icon: '🗺️', title: 'Carte nationale interactive', desc: 'OpenStreetMap avec overlay stations'},
-                {icon: '🔍', title: 'Recherche intelligente', desc: 'Filtres par type, puissance, disponibilité'},
-                {icon: '🧭', title: 'Navigation intégrée', desc: 'GPS optimisé pour bornes'},
-                {icon: '💳', title: 'Paiement sécurisé', desc: 'Multiples moyens de paiement'},
-                {icon: '📱', title: 'Réservation en ligne', desc: 'Planifiez votre recharge'},
-                {icon: '📊', title: 'Dashboard opérateur', desc: 'Gestion et analytics'},
-                {icon: '⭐', title: 'Système d\'avis', desc: 'Communauté de confiance'},
-                {icon: '🔌', title: 'Interopérabilité', desc: 'API & OCPP Ready'},
-              ].map((feature, index) => (
-                <div key={index} className="feature-card">
-                  <div className="feature-icon">{feature.icon}</div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.desc}</p>
-                </div>
-              ))}
-            </div>
+      {/* Technology Section - Simple Emoji Version */}
+<section id="technologie" className="section cat-tech">
+  <div className="container">
+    <div className="cat-header">
+      <span className="cat-label">Technologie</span>
+      <h2 className="cat-title">
+        <span className="gradient-text">Architecture moderne</span> & robuste
+      </h2>
+      <p className="cat-subtitle">
+        Une base technologique conforme aux standards internationaux, conçue pour évoluer avec vos besoins
+      </p>
+    </div>
+    
+    <div className="cat-tech-stack">
+      {/* Frontend Stack */}
+      <div className="cat-stack-category">
+        <div className="cat-stack-header">
+          <div className="cat-stack-icon frontend">
+            <span>⚛️</span>
           </div>
-        </section>
+          <h3 className="cat-stack-title">Frontend</h3>
+        </div>
+        <div className="cat-stack-items">
+         
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">⚛️</span>
+            <span className="cat-tech-name">React JS</span>
+          </div>
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">📘</span>
+            <span className="cat-tech-name">JavaScript XML</span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Mobile Stack */}
+      <div className="cat-stack-category">
+        <div className="cat-stack-header">
+          <div className="cat-stack-icon mobile">
+            <span>📱</span>
+          </div>
+          <h3 className="cat-stack-title">Mobile</h3>
+        </div>
+        <div className="cat-stack-items">
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">🔌</span>
+            <span className="cat-tech-name">Capacitor</span>
+          </div>
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">📱</span>
+            <span className="cat-tech-name">React Native</span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Backend Stack */}
+      <div className="cat-stack-category">
+        <div className="cat-stack-header">
+          <div className="cat-stack-icon backend">
+            <span>🟢</span>
+          </div>
+          <h3 className="cat-stack-title">Backend</h3>
+        </div>
+        <div className="cat-stack-items">
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">🟢</span>
+            <span className="cat-tech-name">Express</span>
+          </div>
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">📘</span>
+            <span className="cat-tech-name">TypeScript</span>
+          </div>
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">🗄️</span>
+            <span className="cat-tech-name">Supabase</span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Cartography Stack */}
+      <div className="cat-stack-category">
+        <div className="cat-stack-header">
+          <div className="cat-stack-icon maps">
+            <span>🗺️</span>
+          </div>
+          <h3 className="cat-stack-title">Cartographie</h3>
+        </div>
+        <div className="cat-stack-items">
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">🌍</span>
+            <span className="cat-tech-name">OpenStreetMap</span>
+          </div>
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">🍃</span>
+            <span className="cat-tech-name">Leaflet</span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Security Stack */}
+      <div className="cat-stack-category">
+        <div className="cat-stack-header">
+          <div className="cat-stack-icon security">
+            <span>🔒</span>
+          </div>
+          <h3 className="cat-stack-title">Sécurité</h3>
+        </div>
+        <div className="cat-stack-items">
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">🔑</span>
+            <span className="cat-tech-name">JWT</span>
+          </div>
+          <div className="cat-stack-item">
+            <div className="cat-tech-text">RLS</div>
+            <span className="cat-tech-name">Row Level Security</span>
+          </div>
+          <div className="cat-stack-item">
+            <span className="cat-tech-icon">🔐</span>
+            <span className="cat-tech-name">HTTPS/TLS</span>
+          </div>
+        </div>
+      </div>
+      
+     
+        </div>
+      
+    
+    <div className="cat-tech-values">
+      <div className="cat-value-card">
+        <div className="cat-value-icon">🏗️</div>
+        <div className="cat-value-content">
+          <h4>Architecture modulaire</h4>
+          <p>Composants indépendants, maintenables et extensibles</p>
+        </div>
+      </div>
+      
+      <div className="cat-value-card">
+        <div className="cat-value-icon">🚀</div>
+        <div className="cat-value-content">
+          <h4>Performance optimale</h4>
+          <p>Optimisation continue pour des temps de réponse instantanés</p>
+        </div>
+      </div>
+      
+      <div className="cat-value-card">
+        <div className="cat-value-icon">🔒</div>
+        <div className="cat-value-content">
+          <h4>Sécurité renforcée</h4>
+          <p>Certifications et standards de sécurité les plus élevés</p>
+        </div>
+      </div>
+      
+      <div className="cat-value-card">
+        <div className="cat-value-icon">🌍</div>
+        <div className="cat-value-content">
+          <h4>Scalabilité régionale</h4>
+          <p>Prêt pour l'expansion à travers le Maghreb et au-delà</p>
+        </div>
+      </div>
+    </div>
+    
+    
 
-        {/* Technology Section */}
-        <section id="technologie" className="section tech-section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Une base technologique robuste et scalable</h2>
-              <p className="section-subtitle">Architecture moderne conforme aux standards internationaux</p>
-            </div>
-            
-            <div className="tech-stack">
-              <div className="stack-category">
-                <h3>Frontend</h3>
-                <div className="stack-items">
-                  <div className="stack-item">React</div>
-                  <div className="stack-item">Vite</div>
-                  <div className="stack-item">TypeScript</div>
-                </div>
-              </div>
-              
-              <div className="stack-category">
-                <h3>Mobile</h3>
-                <div className="stack-items">
-                  <div className="stack-item">Capacitor</div>
-                  <div className="stack-item">React Native</div>
-                </div>
-              </div>
-              
-              <div className="stack-category">
-                <h3>Backend</h3>
-                <div className="stack-items">
-                  <div className="stack-item">Node.js</div>
-                  <div className="stack-item">TypeScript</div>
-                  <div className="stack-item">Supabase</div>
-                </div>
-              </div>
-              
-              <div className="stack-category">
-                <h3>Cartographie</h3>
-                <div className="stack-items">
-                  <div className="stack-item">OpenStreetMap</div>
-                  <div className="stack-item">Leaflet</div>
-                </div>
-              </div>
-              
-              <div className="stack-category">
-                <h3>Sécurité</h3>
-                <div className="stack-items">
-                  <div className="stack-item">JWT</div>
-                  <div className="stack-item">RLS</div>
-                  <div className="stack-item">HTTPS</div>
-                </div>
-              </div>
-              
-              <div className="stack-category">
-                <h3>Standards</h3>
-                <div className="stack-items">
-                  <div className="stack-item">OCPP 1.6/2.0</div>
-                  <div className="stack-item">ISO 15118</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="tech-values">
-              <div className="value-card">
-                <h4>Architecture modulaire</h4>
-                <p>Composants indépendants et maintenables</p>
-              </div>
-              <div className="value-card">
-                <h4>Sécurité et performance</h4>
-                <p>Best practices et optimisation continue</p>
-              </div>
-              <div className="value-card">
-                <h4>Scalabilité régionale</h4>
-                <p>Prêt pour expansion Maghreb</p>
-              </div>
-              <div className="value-card">
-                <h4>Conformité standards</h4>
-                <p>Interopérabilité garantie</p>
-              </div>
-            </div>
-          </div>
-        </section>
+  </div>
+</section>
 
-        {/* Team Section */}
-        <section id="equipe" className="section team-section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">L'équipe fondatrice</h2>
-              <p className="section-subtitle">Une équipe complémentaire, engagée et orientée impact</p>
-            </div>
-            
-            <div className="team-grid">
-              <div className="team-member">
-                <div className="member-avatar">RF</div>
-                <h3>Rania Fatnassi</h3>
-                <div className="member-role">CEO</div>
-                <p className="member-bio">
-                  Vision stratégique, développement business, partenariats et pilotage global
-                </p>
-                <div className="member-expertise">
-                  <span>Stratégie</span>
-                  <span>Business Dev</span>
-                  <span>Partenariats</span>
-                </div>
-              </div>
-              
-              <div className="team-member">
-                <div className="member-avatar">ND</div>
-                <h3>Nassim El Dali</h3>
-                <div className="member-role">CTO</div>
-                <p className="member-bio">
-                  Architecture technique, mobilité électrique, supervision des systèmes et interopérabilité
-                </p>
-                <div className="member-expertise">
-                  <span>Architecture</span>
-                  <span>OCPP</span>
-                  <span>Systèmes</span>
-                </div>
-              </div>
-              
-              <div className="team-member">
-                <div className="member-avatar">YZ</div>
-                <h3>Youssef Zrig</h3>
-                <div className="member-role">CFO</div>
-                <p className="member-bio">
-                  Modèle économique, stratégie financière et structuration des revenus
-                </p>
-                <div className="member-expertise">
-                  <span>Finance</span>
-                  <span>Business Model</span>
-                  <span>Stratégie</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="team-extended">
-              <h4>Équipe élargie</h4>
-              <div className="extended-roles">
-                <div className="role">Développeurs Full-Stack (4)</div>
-                <div className="role">Designer UI/UX</div>
-                <div className="role">Marketing & Growth</div>
-                <div className="role">Support Client</div>
-              </div>
-            </div>
-          </div>
-        </section>
+      
 
-        {/* Contact Section */}
-        <section id="contact" className="section contact-section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Rejoignez l'écosystème EVMapTN</h2>
-              <p className="section-subtitle">Contactez-nous pour un partenariat, une démo ou plus d'informations</p>
-            </div>
-            
-            <div className="contact-content">
-              <div className="contact-info">
-                <div className="info-card">
-                  <div className="info-icon">🤝</div>
-                  <h4>Partenariats</h4>
-                  <p>Opérateurs de bornes, constructeurs automobiles</p>
-                  <a href="mailto:partenariats@evmaptn.tn">partenariats@evmaptn.tn</a>
-                </div>
-                
-                <div className="info-card">
-                  <div className="info-icon">🏛️</div>
-                  <h4>Institutions</h4>
-                  <p>Collectivités, programmes publics, investisseurs</p>
-                  <a href="mailto:institutions@evmaptn.tn">institutions@evmaptn.tn</a>
-                </div>
-                
-                <div className="info-card">
-                  <div className="info-icon">📋</div>
-                  <h4>Dossier projet</h4>
-                  <p>Téléchargez notre pitch deck complet</p>
-                  <button className="btn btn-outline">Télécharger le PDF</button>
-                </div>
-              </div>
-              
-              <div className="contact-form">
-                <form>
-                  <div className="form-group">
-                    <input type="text" placeholder="Votre nom" required />
-                  </div>
-                  <div className="form-group">
-                    <input type="email" placeholder="Votre email" required />
-                  </div>
-                  <div className="form-group">
-                    <select required>
-                      <option value="">Type de demande</option>
-                      <option value="partnership">Partenariat</option>
-                      <option value="demo">Démo produit</option>
-                      <option value="investment">Investissement</option>
-                      <option value="other">Autre</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <textarea placeholder="Votre message" rows="4" required></textarea>
-                  </div>
-                  <button type="submit" className="btn btn-primary">Envoyer le message</button>
-                </form>
-              </div>
+       {/* Team Section */}
+<section id="equipe" className="section cat-team">
+  <div className="container">
+    <div className="cat-header">
+      <span className="cat-label">Équipe</span>
+      <h2 className="cat-title">
+        L'équipe fondatrice <span className="gradient-text">EVMapyTN</span>
+      </h2>
+      <p className="cat-subtitle">
+        Une équipe complémentaire, engagée et passionnée par la mobilité électrique en Tunisie
+      </p>
+    </div>
+    
+    {/* Founder Team */}
+    <div className="cat-team-grid">
+      {/* Rania Fatnassi */}
+      <div className="cat-member-card">
+        <div className="cat-member-photo-container">
+          <img 
+            src="/src/assets/images/team/rania-fatnassi.jpg" 
+            alt="Rania Fatnassi" 
+            className="cat-member-photo"
+          />
+        </div>
+        <div className="cat-member-content">
+          <h3 className="cat-member-name">Rania Fatnassi</h3>
+          <div className="cat-member-role">CEO & Co-founder</div>
+          <p className="cat-member-bio">
+            Vision stratégique, développement business, partenariats et pilotage global du projet.
+          </p>
+          <div className="cat-member-expertise">
+            <span>Stratégie</span>
+            <span>Business Dev</span>
+            <span>Partenariats</span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Nassim El Dali */}
+      <div className="cat-member-card">
+        <div className="cat-member-photo-container">
+          <img 
+            src="/src/assets/images/nassim.jpg" 
+            alt="Nassim El Dali" 
+            className="cat-member-photo"
+          />
+        </div>
+        <div className="cat-member-content">
+          <h3 className="cat-member-name">Nassim El Dali</h3>
+          <div className="cat-member-role">CTO & Co-founder</div>
+          <p className="cat-member-bio">
+            Architecture technique, mobilité électrique, supervision des systèmes et interopérabilité OCPP.
+          </p>
+          <div className="cat-member-expertise">
+            <span>Architecture</span>
+            <span>OCPP</span>
+            <span>Systèmes</span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Youssef Zrig */}
+      <div className="cat-member-card">
+        <div className="cat-member-photo-container">
+          <img 
+            src="/src/assets/images/team/youssef-zrig.jpg" 
+            alt="Youssef Zrig" 
+            className="cat-member-photo"
+          />
+        </div>
+        <div className="cat-member-content">
+          <h3 className="cat-member-name">Youssef Zrig</h3>
+          <div className="cat-member-role">CFO & Co-founder</div>
+          <p className="cat-member-bio">
+            Modèle économique, stratégie financière, structuration des revenus et gestion opérationnelle.
+          </p>
+          <div className="cat-member-expertise">
+            <span>Finance</span>
+            <span>Business Model</span>
+            <span>Stratégie</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Technical Team */}
+    <div className="cat-technical-team">
+      <div className="cat-header">
+        <h2 className="cat-title">
+          L'équipe technique <span className="gradient-text">EVMapyTN</span>
+        </h2>
+      </div>
+      
+      <div className="cat-team-grid tech-grid">
+        {/* Takoua Laffet */}
+        <div className="cat-member-card tech-card">
+          <div className="cat-member-photo-container">
+            <img 
+              src="/src/assets/images/team/takoua-laffet.jpg" 
+              alt="Takoua Laffet" 
+              className="cat-member-photo"
+            />
+          </div>
+          <div className="cat-member-content">
+            <h3 className="cat-member-name">Takoua Laffet</h3>
+            <div className="cat-member-role">Lead Backend Developer</div>
+            <p className="cat-member-bio">
+              Architecture serveur, API REST, base de données et intégration OCPP pour la gestion des bornes de recharge.
+            </p>
+            <div className="cat-member-expertise">
+              <span>Node.js</span>
+              <span>API</span>
+              <span>Base de données</span>
             </div>
           </div>
-        </section>
+        </div>
+        
+        {/* Ftiti Mohamed Marouan */}
+        <div className="cat-member-card tech-card">
+          <div className="cat-member-photo-container">
+            <img 
+              src="/src/assets/images/team/ftiti-marouan.jpg" 
+              alt="Ftiti Mohamed Marouan" 
+              className="cat-member-photo"
+            />
+          </div>
+          <div className="cat-member-content">
+            <h3 className="cat-member-name">Ftiti Mohamed Marouan</h3>
+            <div className="cat-member-role">Full-Stack Developer</div>
+            <p className="cat-member-bio">
+              Développement des interfaces utilisateur, intégration cartographique et optimisation des performances.
+            </p>
+            <div className="cat-member-expertise">
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>UI/UX</span>
+            </div>
+          </div>
+        </div>
+        
+        {/* Houssine Ben Arous */}
+        <div className="cat-member-card tech-card">
+          <div className="cat-member-photo-container">
+            <img 
+              src="/src/assets/images/team/houssine-benarous.jpg" 
+              alt="Houssine Ben Arous" 
+              className="cat-member-photo"
+            />
+          </div>
+          <div className="cat-member-content">
+            <h3 className="cat-member-name">Houssine Ben Arous</h3>
+            <div className="cat-member-role">Mobile Developer</div>
+            <p className="cat-member-bio">
+              Développement d'applications mobiles iOS et Android avec intégration de paiement et recharge.
+            </p>
+            <div className="cat-member-expertise">
+              <span>React Native</span>
+              <span>iOS/Android</span>
+              <span>Paiement</span>
+            </div>
+          </div>
+        </div>
+        
+        {/* Ahed Assoudi */}
+        <div className="cat-member-card tech-card">
+          <div className="cat-member-photo-container">
+            <img 
+              src="/src/assets/images/team/ahed-assoudi.jpg" 
+              alt="Ahed Assoudi" 
+              className="cat-member-photo"
+            />
+          </div>
+          <div className="cat-member-content">
+            <h3 className="cat-member-name">Ahed Assoudi</h3>
+            <div className="cat-member-role">DevOps & Infrastructure</div>
+            <p className="cat-member-bio">
+              Infrastructure cloud, déploiement continu, monitoring et sécurité pour une plateforme haute disponibilité.
+            </p>
+            <div className="cat-member-expertise">
+              <span>DevOps</span>
+              <span>Cloud</span>
+              <span>Sécurité</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Contact Section */}
+<section id="contact" className="section cat-contact">
+  <div className="container">
+    <div className="cat-header">
+      <span className="cat-label">Contact</span>
+      <h2 className="cat-title">
+        <span className="gradient-text">Rejoignez l'écosystème</span> EVMapTN
+      </h2>
+      <p className="cat-subtitle">
+        Contactez-nous pour un partenariat, une démo ou pour en savoir plus sur notre projet
+      </p>
+    </div>
+    
+    <div className="cat-contact-grid">
+      {/* Contact Information */}
+      <div className="cat-contact-info">
+       
+        
+        <div className="cat-info-card">
+          <div className="cat-info-icon">
+            <span>🏛️</span>
+          </div>
+          <div className="cat-info-content">
+            <h3>Institutions</h3>
+            <p>Collectivités, programmes publics, investisseurs institutionnels</p>
+            <div className="cat-info-contact">
+              <a href="mailto:institutions@evmaptn.tn" className="cat-contact-email">
+                institutions@evmaptn.tn
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      {/* Contact Form */}
+      <div className="cat-contact-form">
+        <div className="cat-form-header">
+          <h3 className="cat-form-title">Envoyez-nous un message</h3>
+          <p className="cat-form-subtitle">Nous vous répondrons dans les 24 heures</p>
+        </div>
+        
+        <form className="cat-form">
+          <div className="cat-form-group">
+            <label htmlFor="name" className="cat-form-label">Votre nom</label>
+            <input 
+              type="text" 
+              id="name" 
+              className="cat-form-input" 
+              placeholder="Votre nom complet" 
+              required 
+            />
+          </div>
+          
+          <div className="cat-form-group">
+            <label htmlFor="email" className="cat-form-label">Votre email</label>
+            <input 
+              type="email" 
+              id="email" 
+              className="cat-form-input" 
+              placeholder="votre@email.com" 
+              required 
+            />
+          </div>
+          
+          <div className="cat-form-group">
+            <label htmlFor="type" className="cat-form-label">Type de demande</label>
+            <select id="type" className="cat-form-select" required>
+              <option value="">Sélectionnez une option</option>
+              <option value="partnership">Partenariat</option>
+              <option value="demo">Démo produit</option>
+              <option value="investment">Investissement</option>
+              <option value="information">Information</option>
+              <option value="other">Autre</option>
+            </select>
+          </div>
+          
+          <div className="cat-form-group">
+            <label htmlFor="message" className="cat-form-label">Votre message</label>
+            <textarea 
+              id="message" 
+              className="cat-form-textarea" 
+              rows="4" 
+              placeholder="Décrivez votre demande..." 
+              required
+            ></textarea>
+          </div>
+          
+          <button type="submit" className="cat-submit-btn">
+            <span className="cat-submit-icon">✉️</span>
+            Envoyer le message
+          </button>
+        </form>
+      </div>
+    </div>
+    
+  
+  </div>
+</section>
       </main>
       
       <Footer scrollToSection={scrollToSection} />
