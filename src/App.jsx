@@ -82,6 +82,7 @@ useEffect(() => {
         <h1 className="hero-title">
           <span className="gradient-text">EVMapyTN</span><span class="tagline">
    La plateforme intelligente de recharge électrique en Tunisie
+   
 </span>
 
         </h1>
@@ -738,7 +739,7 @@ useEffect(() => {
       <div className="cat-member-card">
         <div className="cat-member-photo-container">
           <img 
-            src="/src/assets/images/team/rania-fatnassi.jpg" 
+            src="/src/assets/images/rania.jpg" 
             alt="Rania Fatnassi" 
             className="cat-member-photo"
           />
@@ -818,7 +819,7 @@ useEffect(() => {
         <div className="cat-member-card tech-card">
           <div className="cat-member-photo-container">
             <img 
-              src="/src/assets/images/team/takoua-laffet.jpg" 
+              src="/src/assets/images/takwa.png" 
               alt="Takoua Laffet" 
               className="cat-member-photo"
             />
@@ -848,7 +849,7 @@ useEffect(() => {
           </div>
           <div className="cat-member-content">
             <h3 className="cat-member-name">Ftiti Mohamed Marouan</h3>
-            <div className="cat-member-role">Full-Stack Developer</div>
+            <div className="cat-member-role">Web Developer</div>
             <p className="cat-member-bio">
               Développement des interfaces utilisateur, intégration cartographique et optimisation des performances.
             </p>
@@ -878,7 +879,7 @@ useEffect(() => {
             <div className="cat-member-expertise">
               <span>React Native</span>
               <span>iOS/Android</span>
-              <span>Paiement</span>
+              <span>Express</span>
             </div>
           </div>
         </div>
@@ -887,7 +888,7 @@ useEffect(() => {
         <div className="cat-member-card tech-card">
           <div className="cat-member-photo-container">
             <img 
-              src="/src/assets/images/team/ahed-assoudi.jpg" 
+              src="/src/assets/images/ahed.jpg" 
               alt="Ahed Assoudi" 
               className="cat-member-photo"
             />
