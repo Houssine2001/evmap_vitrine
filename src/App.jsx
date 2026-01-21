@@ -4,7 +4,44 @@ import Footer from './components/Footer/Footer.jsx';
 import './styles/main.css';
 import Home from "./assets/images/home.png";
 import Cart from "/src/assets/images/cart.png";
+import {
+  FaReact,
+  FaNodeJs,
+  FaMobileAlt,
+  FaLock,
+  FaMapMarkedAlt,
+  FaServer,
+  FaShieldAlt,
+   FaCubes,
+  FaTachometerAlt,
+  FaGlobeAfrica,
+   FaMapMarkerAlt,
+  FaBolt,
+  FaEuroSign,
+   FaTools,
+  FaEye,
+  FaCreditCard,
+  FaChartBar
+} from "react-icons/fa";
 
+import {
+  SiJavascript,
+  SiTypescript,
+  SiSupabase,
+  SiOpenstreetmap,
+  SiJsonwebtokens,
+  SiLeaflet
+} from "react-icons/si";
+import {
+  FiMail,
+  FiPhone,
+  FiSend,
+  FiCopy
+} from "react-icons/fi";
+
+import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+
+import { LuZap } from "react-icons/lu";
 function App() {
   const [activeSection, setActiveSection] = useState('accueil');
   const [activeTab, setActiveTab] = useState('b2c');
@@ -43,7 +80,10 @@ useEffect(() => {
     <div className="hero-content">
       <div className="hero-text">
         <h1 className="hero-title">
-          <span className="gradient-text">EVMapyTN</span> – La plateforme intelligente de recharge électrique en Tunisie
+          <span className="gradient-text">EVMapyTN</span><span class="tagline">
+   La plateforme intelligente de recharge électrique en Tunisie
+</span>
+
         </h1>
         <p className="hero-subtitle">
           Localisez, réservez, payez et gérez vos sessions de recharge à travers une Application Mobile nationale, fiable et interopérable.
@@ -161,7 +201,7 @@ useEffect(() => {
     
     <div className="problem-stats">
       <div className="stat-item">
-        <span className="stat-number">+5</span>
+        <span className="stat-number">+2</span>
         <span className="stat-text">Applications différentes</span>
       </div>
       <div className="stat-item">
@@ -176,75 +216,78 @@ useEffect(() => {
     
     <div className="problem-grid">
       <div className="problem-card">
-        <div className="card-icon">
-          <div className="icon-wrapper">
-            <span className="icon">🚧</span>
-          </div>
-        </div>
-        <h3 className="card-title">Absence de plateforme nationale</h3>
-        <p className="card-description">
-          Pas de solution centralisée pour gérer l'ensemble du réseau de recharge tunisien
-        </p>
-        <div className="card-footer">
-          <span className="footer-tag">Problème structurel</span>
-        </div>
-      </div>
+  <div className="card-icon">
+    <div className="icon-wrapper infrastructure">
+      <FaTools className="icon" />
+    </div>
+  </div>
+  <h3 className="card-title">Absence de plateforme nationale</h3>
+  <p className="card-description">
+    Pas de solution centralisée pour gérer l'ensemble du réseau de recharge tunisien
+  </p>
+  <div className="card-footer">
+    <span className="footer-tag">Problème structurel</span>
+  </div>
+</div>
       
       <div className="problem-card">
-        <div className="card-icon">
-          <div className="icon-wrapper">
-            <span className="icon">👁️</span>
-          </div>
-        </div>
-        <h3 className="card-title">Manque de visibilité</h3>
-        <p className="card-description">
-          Difficulté à localiser les bornes disponibles en temps réel avec leur statut
-        </p>
-        <div className="card-footer">
-          <span className="footer-tag">Expérience utilisateur</span>
-        </div>
-      </div>
+  <div className="card-icon">
+    <div className="icon-wrapper visibility">
+      <FaEye className="icon" />
+    </div>
+  </div>
+  <h3 className="card-title">Manque de visibilité</h3>
+  <p className="card-description">
+    Difficulté à localiser les bornes disponibles en temps réel avec leur statut
+  </p>
+  <div className="card-footer">
+    <span className="footer-tag">Expérience utilisateur</span>
+  </div>
+</div>
+
       
       <div className="problem-card">
-        <div className="card-icon">
-          <div className="icon-wrapper">
-            <span className="icon">💳</span>
-          </div>
-        </div>
-        <h3 className="card-title">Paiements multiples</h3>
-        <p className="card-description">
-          Différents systèmes de paiement, abonnements et méthodes de facturation
-        </p>
-        <div className="card-footer">
-          <span className="footer-tag">Complexité opérationnelle</span>
-        </div>
-      </div>
+  <div className="card-icon">
+    <div className="icon-wrapper payment">
+      <FaCreditCard className="icon" />
+    </div>
+  </div>
+  <h3 className="card-title">Paiements multiples</h3>
+  <p className="card-description">
+    Différents systèmes de paiement, abonnements et méthodes de facturation
+  </p>
+  <div className="card-footer">
+    <span className="footer-tag">Complexité opérationnelle</span>
+  </div>
+</div>
+
       
       <div className="problem-card">
-        <div className="card-icon">
-          <div className="icon-wrapper">
-            <span className="icon">📊</span>
-          </div>
-        </div>
-        <h3 className="card-title">Données non exploitées</h3>
-        <p className="card-description">
-          Absence d'analytics et de données consolidées pour les décideurs
-        </p>
-        <div className="card-footer">
-          <span className="footer-tag">Opportunité manquée</span>
-        </div>
-      </div>
+  <div className="card-icon">
+    <div className="icon-wrapper data">
+      <FaChartBar className="icon" />
+    </div>
+  </div>
+  <h3 className="card-title">Données non exploitées</h3>
+  <p className="card-description">
+    Absence d'analytics et de données consolidées pour les décideurs
+  </p>
+  <div className="card-footer">
+    <span className="footer-tag">Opportunité manquée</span>
+  </div>
+</div>
+
     </div>
     
     <div className="problem-highlight">
       <div className="highlight-content">
-        <div className="highlight-icon">⚡</div>
+        <div className="highlight-icon"><img alt="Nassim El Dali" class="cat-member-photo-" src="/src/assets/images/nassim.png"/></div>
         <div className="highlight-text">
           <p className="highlight-quote">
             "L'infrastructure existe, mais elle n'est ni organisée ni optimisée pour une adoption massive."
           </p>
           <div className="highlight-author">
-            <span className="author-name">Nassim H.</span>
+            <span className="author-name">Nassim El Dali</span>
             <span className="author-role">CTO EVMapyTN - Tunis</span>
           </div>
         </div>
@@ -347,7 +390,7 @@ useEffect(() => {
             
             <img 
               src="/src/assets/images/home.png" 
-              alt="Écran principal EVMapTN"
+              alt="Écran principal EVMapyTN"
               className="cat-phone-screen"
             />
           
@@ -358,29 +401,41 @@ useEffect(() => {
         </div>
         
         <div className="cat-interface-features">
-          <div className="cat-feature-card">
-            <div className="cat-feature-icon">📍</div>
-            <div className="cat-feature-details">
-              <h4>Géolocalisation précise</h4>
-              <p>Trouvez les stations les plus proches en temps réel</p>
-            </div>
+         <div className="cat-feature-card">
+  <div className="cat-feature-icon location">
+    <FaMapMarkerAlt />
+  </div>
+  <div className="cat-feature-details">
+    <h4>Géolocalisation précise</h4>
+    <p>Trouvez les stations les plus proches en temps réel</p>
+  </div>
+
+
           </div>
           
-          <div className="cat-feature-card">
-            <div className="cat-feature-icon">⚡</div>
-            <div className="cat-feature-details">
-              <h4>Statut en direct</h4>
-              <p>Disponibilité des bornes actualisée chaque minute</p>
-            </div>
+         <div className="cat-feature-card">
+  <div className="cat-feature-icon live">
+    <FaBolt />
+  </div>
+  <div className="cat-feature-details">
+    <h4>Statut en direct</h4>
+    <p>Disponibilité des bornes actualisée chaque minute</p>
+  </div>
+
+
           </div>
           
-          <div className="cat-feature-card">
-            <div className="cat-feature-icon">💰</div>
-            <div className="cat-feature-details">
-              <h4>Tarifs transparents</h4>
-              <p>Prix clairs avant chaque réservation</p>
-            </div>
-          </div>
+       <div className="cat-feature-card">
+  <div className="cat-feature-icon pricing">
+    <FaEuroSign />
+  </div>
+  <div className="cat-feature-details">
+    <h4>Tarifs transparents</h4>
+    <p>Prix clairs avant chaque réservation</p>
+  </div>
+</div>
+
+
         </div>
       </div>
     </div>
@@ -396,7 +451,7 @@ useEffect(() => {
             <div className="cat-screen-frame">
               <img 
                 src="/src/assets/images/recherche.png" 
-                alt="Recherche EVMapTN"
+                alt="Recherche EVMapyTN"
                 className="cat-screen-image"
               />
             </div>
@@ -507,111 +562,106 @@ useEffect(() => {
     <div className="cat-tech-stack">
       {/* Frontend Stack */}
       <div className="cat-stack-category">
-        <div className="cat-stack-header">
-          <div className="cat-stack-icon frontend">
-            <span>⚛️</span>
-          </div>
-          <h3 className="cat-stack-title">Frontend</h3>
-        </div>
+       <div className="cat-stack-header">
+  <div className="cat-stack-icon frontend">
+    <FaReact />
+  </div>
+  <h3 className="cat-stack-title">Front-End</h3>
+</div>
         <div className="cat-stack-items">
          
           <div className="cat-stack-item">
-            <span className="cat-tech-icon">⚛️</span>
-            <span className="cat-tech-name">React JS</span>
-          </div>
-          <div className="cat-stack-item">
-            <span className="cat-tech-icon">📘</span>
-            <span className="cat-tech-name">JavaScript XML</span>
-          </div>
+  <FaReact className="cat-tech-icon react" />
+  <span className="cat-tech-name">React JS</span>
+</div>
+
+<div className="cat-stack-item">
+  <SiJavascript className="cat-tech-icon js" />
+  <span className="cat-tech-name">JSX</span>
+</div>
         </div>
       </div>
       
       {/* Mobile Stack */}
       <div className="cat-stack-category">
         <div className="cat-stack-header">
-          <div className="cat-stack-icon mobile">
-            <span>📱</span>
-          </div>
-          <h3 className="cat-stack-title">Mobile</h3>
-        </div>
+  <div className="cat-stack-icon mobile">
+    <FaMobileAlt />
+  </div>
+  <h3 className="cat-stack-title">Mobile Front-End</h3>
+</div>
         <div className="cat-stack-items">
+         
           <div className="cat-stack-item">
-            <span className="cat-tech-icon">🔌</span>
-            <span className="cat-tech-name">Capacitor</span>
-          </div>
-          <div className="cat-stack-item">
-            <span className="cat-tech-icon">📱</span>
-            <span className="cat-tech-name">React Native</span>
-          </div>
+  <FaMobileAlt className="cat-tech-icon native" />
+  <span className="cat-tech-name">React Native</span>
+</div>
+
         </div>
       </div>
       
       {/* Backend Stack */}
       <div className="cat-stack-category">
-        <div className="cat-stack-header">
-          <div className="cat-stack-icon backend">
-            <span>🟢</span>
-          </div>
-          <h3 className="cat-stack-title">Backend</h3>
-        </div>
-        <div className="cat-stack-items">
-          <div className="cat-stack-item">
-            <span className="cat-tech-icon">🟢</span>
-            <span className="cat-tech-name">Express</span>
-          </div>
-          <div className="cat-stack-item">
-            <span className="cat-tech-icon">📘</span>
-            <span className="cat-tech-name">TypeScript</span>
-          </div>
-          <div className="cat-stack-item">
-            <span className="cat-tech-icon">🗄️</span>
-            <span className="cat-tech-name">Supabase</span>
-          </div>
-        </div>
+      <div className="cat-stack-header">
+  <div className="cat-stack-icon backend">
+    <FaServer />
+  </div>
+  <h3 className="cat-stack-title">Back-End</h3>
+</div>
+       <div className="cat-stack-item">
+  <FaNodeJs className="cat-tech-icon node" />
+  <span className="cat-tech-name">Express.js</span>
+</div><br />
+
+<div className="cat-stack-item">
+  <SiTypescript className="cat-tech-icon ts" />
+  <span className="cat-tech-name">TypeScript</span>
+</div><br />
+
+<div className="cat-stack-item">
+  <SiSupabase className="cat-tech-icon supabase" />
+  <span className="cat-tech-name">Supabase</span>
+</div>
+
       </div>
       
       {/* Cartography Stack */}
       <div className="cat-stack-category">
         <div className="cat-stack-header">
-          <div className="cat-stack-icon maps">
-            <span>🗺️</span>
-          </div>
-          <h3 className="cat-stack-title">Cartographie</h3>
-        </div>
-        <div className="cat-stack-items">
-          <div className="cat-stack-item">
-            <span className="cat-tech-icon">🌍</span>
-            <span className="cat-tech-name">OpenStreetMap</span>
-          </div>
-          <div className="cat-stack-item">
-            <span className="cat-tech-icon">🍃</span>
-            <span className="cat-tech-name">Leaflet</span>
-          </div>
-        </div>
+  <div className="cat-stack-icon maps">
+    <FaMapMarkedAlt />
+  </div>
+  <h3 className="cat-stack-title">Cartographie</h3>
+</div>
+       <div className="cat-stack-item">
+  <SiLeaflet className="cat-tech-icon leaflet" />
+  <span className="cat-tech-name">Leaflet</span>
+</div>
+<br />
+<div className="cat-stack-item">
+  <SiOpenstreetmap className="cat-tech-icon osm" />
+  <span className="cat-tech-name">OpenStreetMap</span>
+</div>
       </div>
       
       {/* Security Stack */}
       <div className="cat-stack-category">
         <div className="cat-stack-header">
-          <div className="cat-stack-icon security">
-            <span>🔒</span>
-          </div>
-          <h3 className="cat-stack-title">Sécurité</h3>
-        </div>
-        <div className="cat-stack-items">
-          <div className="cat-stack-item">
-            <span className="cat-tech-icon">🔑</span>
-            <span className="cat-tech-name">JWT</span>
-          </div>
-          <div className="cat-stack-item">
-            <div className="cat-tech-text">RLS</div>
-            <span className="cat-tech-name">Row Level Security</span>
-          </div>
-          <div className="cat-stack-item">
-            <span className="cat-tech-icon">🔐</span>
-            <span className="cat-tech-name">HTTPS/TLS</span>
-          </div>
-        </div>
+  <div className="cat-stack-icon security">
+    <FaShieldAlt />
+  </div>
+  <h3 className="cat-stack-title">Sécurité</h3>
+</div>
+      <div className="cat-stack-item">
+  <SiJsonwebtokens className="cat-tech-icon jwt" />
+  <span className="cat-tech-name">JWT</span>
+</div>
+<br />
+<div className="cat-stack-item">
+  <FaLock className="cat-tech-icon lock" />
+  <span className="cat-tech-name">HTTPS / TLS</span>
+</div>
+
       </div>
       
      
@@ -620,36 +670,46 @@ useEffect(() => {
     
     <div className="cat-tech-values">
       <div className="cat-value-card">
-        <div className="cat-value-icon">🏗️</div>
-        <div className="cat-value-content">
-          <h4>Architecture modulaire</h4>
-          <p>Composants indépendants, maintenables et extensibles</p>
-        </div>
-      </div>
+  <div className="cat-value-icon architecture">
+    <FaCubes />
+  </div>
+  <div className="cat-value-content">
+    <h4>Architecture modulaire</h4>
+    <p>Composants indépendants, maintenables et extensibles</p>
+  </div>
+</div>
+      
+     <div className="cat-value-card">
+  <div className="cat-value-icon performance">
+    <FaTachometerAlt />
+  </div>
+  <div className="cat-value-content">
+    <h4>Performance optimale</h4>
+    <p>Optimisation continue pour des temps de réponse instantanés</p>
+  </div>
+</div>
+      
+     <div className="cat-value-card">
+  <div className="cat-value-icon security">
+    <FaLock />
+  </div>
+  <div className="cat-value-content">
+    <h4>Sécurité renforcée</h4>
+    <p>Certifications et standards de sécurité les plus élevés</p>
+  </div>
+</div>
+
       
       <div className="cat-value-card">
-        <div className="cat-value-icon">🚀</div>
-        <div className="cat-value-content">
-          <h4>Performance optimale</h4>
-          <p>Optimisation continue pour des temps de réponse instantanés</p>
-        </div>
-      </div>
-      
-      <div className="cat-value-card">
-        <div className="cat-value-icon">🔒</div>
-        <div className="cat-value-content">
-          <h4>Sécurité renforcée</h4>
-          <p>Certifications et standards de sécurité les plus élevés</p>
-        </div>
-      </div>
-      
-      <div className="cat-value-card">
-        <div className="cat-value-icon">🌍</div>
-        <div className="cat-value-content">
-          <h4>Scalabilité régionale</h4>
-          <p>Prêt pour l'expansion à travers le Maghreb et au-delà</p>
-        </div>
-      </div>
+  <div className="cat-value-icon scalability">
+    <FaGlobeAfrica />
+  </div>
+  <div className="cat-value-content">
+    <h4>Scalabilité régionale</h4>
+    <p>Prêt pour l'expansion à travers le Maghreb et au-delà</p>
+  </div>
+</div>
+
     </div>
     
     
@@ -701,7 +761,7 @@ useEffect(() => {
       <div className="cat-member-card">
         <div className="cat-member-photo-container">
           <img 
-            src="/src/assets/images/nassim.jpg" 
+            src="/src/assets/images/nassim.png" 
             alt="Nassim El Dali" 
             className="cat-member-photo"
           />
@@ -724,7 +784,7 @@ useEffect(() => {
       <div className="cat-member-card">
         <div className="cat-member-photo-container">
           <img 
-            src="/src/assets/images/team/youssef-zrig.jpg" 
+            src="/src/assets/images/youssef-zrig.png" 
             alt="Youssef Zrig" 
             className="cat-member-photo"
           />
@@ -751,6 +811,7 @@ useEffect(() => {
           L'équipe technique <span className="gradient-text">EVMapyTN</span>
         </h2>
       </div>
+      <br /><br />
       
       <div className="cat-team-grid tech-grid">
         {/* Takoua Laffet */}
@@ -764,12 +825,12 @@ useEffect(() => {
           </div>
           <div className="cat-member-content">
             <h3 className="cat-member-name">Takoua Laffet</h3>
-            <div className="cat-member-role">Lead Backend Developer</div>
+            <div className="cat-member-role">Backend Developer</div>
             <p className="cat-member-bio">
               Architecture serveur, API REST, base de données et intégration OCPP pour la gestion des bornes de recharge.
             </p>
             <div className="cat-member-expertise">
-              <span>Node.js</span>
+              <span>Express</span>
               <span>API</span>
               <span>Base de données</span>
             </div>
@@ -780,7 +841,7 @@ useEffect(() => {
         <div className="cat-member-card tech-card">
           <div className="cat-member-photo-container">
             <img 
-              src="/src/assets/images/team/ftiti-marouan.jpg" 
+              src="/src/assets/images/ftiti-marouan.png" 
               alt="Ftiti Mohamed Marouan" 
               className="cat-member-photo"
             />
@@ -803,7 +864,7 @@ useEffect(() => {
         <div className="cat-member-card tech-card">
           <div className="cat-member-photo-container">
             <img 
-              src="/src/assets/images/team/houssine-benarous.jpg" 
+              src="/src/assets/images/houssine-benarous.png" 
               alt="Houssine Ben Arous" 
               className="cat-member-photo"
             />
@@ -849,106 +910,200 @@ useEffect(() => {
   </div>
 </section>
 
-{/* Contact Section */}
+{/* Contact Section - Form + Contact Info */}
 <section id="contact" className="section cat-contact">
   <div className="container">
     <div className="cat-header">
       <span className="cat-label">Contact</span>
       <h2 className="cat-title">
-        <span className="gradient-text">Rejoignez l'écosystème</span> EVMapTN
+      Contactez   <span className="gradient-text"> notre équipe</span>
       </h2>
       <p className="cat-subtitle">
-        Contactez-nous pour un partenariat, une démo ou pour en savoir plus sur notre projet
+        Nous sommes là pour vous accompagner dans votre transition électrique
       </p>
     </div>
     
-    <div className="cat-contact-grid">
-      {/* Contact Information */}
-      <div className="cat-contact-info">
-       
-        
-        <div className="cat-info-card">
-          <div className="cat-info-icon">
-            <span>🏛️</span>
-          </div>
-          <div className="cat-info-content">
-            <h3>Institutions</h3>
-            <p>Collectivités, programmes publics, investisseurs institutionnels</p>
-            <div className="cat-info-contact">
-              <a href="mailto:institutions@evmaptn.tn" className="cat-contact-email">
-                institutions@evmaptn.tn
-              </a>
-            </div>
-          </div>
+    <div className="cat-contact-layout">
+      {/* Left Side - Contact Form */}
+      <div className="cat-contact-form-section">
+        <div className="form-header">
+          <h3 className="form-title">Envoyez-nous un message</h3>
+          <p className="form-subtitle">Nous vous répondrons dans les 24 heures</p>
         </div>
         
-        
-      </div>
-      
-      {/* Contact Form */}
-      <div className="cat-contact-form">
-        <div className="cat-form-header">
-          <h3 className="cat-form-title">Envoyez-nous un message</h3>
-          <p className="cat-form-subtitle">Nous vous répondrons dans les 24 heures</p>
-        </div>
-        
-        <form className="cat-form">
-          <div className="cat-form-group">
-            <label htmlFor="name" className="cat-form-label">Votre nom</label>
+        <form className="contact-form">
+          <div className="form-group">
+            <label htmlFor="name" className="form-label">Votre nom</label>
             <input 
               type="text" 
               id="name" 
-              className="cat-form-input" 
+              className="form-input" 
               placeholder="Votre nom complet" 
               required 
             />
           </div>
           
-          <div className="cat-form-group">
-            <label htmlFor="email" className="cat-form-label">Votre email</label>
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">Votre email</label>
             <input 
               type="email" 
               id="email" 
-              className="cat-form-input" 
+              className="form-input" 
               placeholder="votre@email.com" 
               required 
             />
           </div>
           
-          <div className="cat-form-group">
-            <label htmlFor="type" className="cat-form-label">Type de demande</label>
-            <select id="type" className="cat-form-select" required>
-              <option value="">Sélectionnez une option</option>
-              <option value="partnership">Partenariat</option>
-              <option value="demo">Démo produit</option>
-              <option value="investment">Investissement</option>
-              <option value="information">Information</option>
-              <option value="other">Autre</option>
-            </select>
-          </div>
+         
           
-          <div className="cat-form-group">
-            <label htmlFor="message" className="cat-form-label">Votre message</label>
+          <div className="form-group">
+            <label htmlFor="message" className="form-label">Votre message</label>
             <textarea 
               id="message" 
-              className="cat-form-textarea" 
-              rows="4" 
+              className="form-textarea" 
+              rows="5" 
               placeholder="Décrivez votre demande..." 
               required
             ></textarea>
           </div>
           
-          <button type="submit" className="cat-submit-btn">
-            <span className="cat-submit-icon">✉️</span>
-            Envoyer le message
-          </button>
+          <div className="form-actions">
+            <button type="submit" className="submit-btn">
+  <span className="btn-iconn">
+    <FiSend />
+  </span>
+  <div className="btn-text">
+    <span className="btn-title">Envoyer le message</span>
+    <span className="btn-subtitle">Réponse rapide garantie</span>
+  </div>
+</button>
+
+          </div>
         </form>
       </div>
+      
+      {/* Right Side - Contact Information */}
+      <div className="cat-contact-info-section">
+        <div className="contact-info-header">
+          <h3 className="info-title">Informations de contact</h3>
+          <p className="info-subtitle">Plusieurs façons de nous contacter</p>
+        </div>
+        
+        <div className="contact-info-cards">
+          {/* Email Card */}
+          <div className="contact-info-card">
+            <div className="info-card-content">
+              <div className="info-card-icon">
+  <span className="icon-wrapper">
+    <FiMail />
+  </span>
+</div>
+
+              <div className="info-card-text">
+                <h4 className="info-card-title">Email</h4>
+                <p className="info-card-description">Pour toutes demandes</p>
+                <div className="info-card-action">
+                  <a href="mailto:contact@evmapytn.tn" className="info-contact-link">
+                    contact@evmapytn.tn
+                  </a>
+                  <button 
+                    className="info-copy-btn" 
+                    onClick={() => {
+                      navigator.clipboard.writeText('contact@evmapytn.tn');
+                      // Add toast notification here
+                    }}
+                    
+                  >
+                    Copier
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Phone Card */}
+          <div className="contact-info-card">
+            <div className="info-card-content">
+              <div className="info-card-icon">
+  <span className="icon-wrapper">
+    <FiPhone />
+  </span>
+</div>
+
+              <div className="info-card-text">
+                <h4 className="info-card-title">Téléphone</h4>
+                <p className="info-card-description">Appelez-nous directement</p>
+                <div className="info-card-action">
+                  <span className="info-contact-link">+216</span>
+                  
+              
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* LinkedIn Card */}
+          <div className="contact-info-card">
+            <div className="info-card-content">
+             <div className="info-card-icon">
+  <span className="icon-wrapper">
+    <FaLinkedinIn />
+  </span>
+</div>
+
+              <div className="info-card-text">
+                <h4 className="info-card-title">LinkedIn</h4>
+                <p className="info-card-description">Réseau professionnel</p>
+                <div className="info-card-action">
+                  <a 
+                    href="https://linkedin.com/company/evmapytn" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="info-contact-link"
+                  >
+                    /company/evmapytn
+                  </a>
+           
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Facebook Card */}
+          <div className="contact-info-card">
+            <div className="info-card-content">
+              <div className="info-card-icon">
+  <span className="icon-wrapper">
+    <FaFacebookF />
+  </span>
+</div>
+
+              <div className="info-card-text">
+                <h4 className="info-card-title">Facebook</h4>
+                <p className="info-card-description">Suivez notre actualité</p>
+                <div className="info-card-action">
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=61586684008715" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="info-contact-link"
+                  >
+                    @evmapytn
+                  </a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
     </div>
-    
-  
   </div>
 </section>
+
       </main>
       
       <Footer scrollToSection={scrollToSection} />
