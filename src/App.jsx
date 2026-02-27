@@ -3,7 +3,7 @@ import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import './styles/main.css';
 import Home from "./assets/images/home.png";
-import Cart from "/src/assets/images/cart.png";
+import Cart from "/images/cart.png";
 import {
   FaReact,
   FaNodeJs,
@@ -394,7 +394,7 @@ function App() {
             <div className="problem-highlight fade-in-up">
               <div className="highlight-content">
                 <div className="highlight-icon">
-                  <img alt="Nassim El Dali" className="cat-member-photo-" src="/src/assets/images/nassim.png"/>
+                  <img alt="Nassim El Dali" className="cat-member-photo-" src="/images/nassim.png"/>
                 </div>
                 <div className="highlight-text">
                   <p className="highlight-quote">
@@ -502,7 +502,7 @@ function App() {
               <div className="cat-interface-main">
                 <div className="cat-phone-container">
                   <img 
-                    src="/src/assets/images/home.png" 
+                    src="/images/home.png" 
                     alt="Écran principal EVMapyTN"
                     className="cat-phone-screen"
                   />
@@ -555,7 +555,7 @@ function App() {
                   <div className="cat-screen-preview">
                     <div className="cat-screen-frame">
                       <img 
-                        src="/src/assets/images/recherche.png" 
+                        src="/images/recherche.png" 
                         alt="Recherche EVMapyTN"
                         className="cat-screen-image"
                       />
@@ -578,7 +578,7 @@ function App() {
                   <div className="cat-screen-preview">
                     <div className="cat-screen-frame">
                       <img 
-                        src="/src/assets/images/reservation.png" 
+                        src="/images/reservation.png" 
                         alt="Réservation EVMapTN"
                         className="cat-screen-image"
                       />
@@ -601,7 +601,7 @@ function App() {
                   <div className="cat-screen-preview">
                     <div className="cat-screen-frame">
                       <img 
-                        src="/src/assets/images/paiement.png" 
+                        src="/images/paiement.png" 
                         alt="Paiement EVMapTN"
                         className="cat-screen-image"
                       />
@@ -806,7 +806,7 @@ function App() {
               <div className="cat-member-card animate-card">
                 <div className="cat-member-photo-container">
                   <img 
-                    src="/src/assets/images/nassim.png" 
+                    src="/images/nassim.png" 
                     alt="Nassim El Dali" 
                     className="cat-member-photo"
                   />
@@ -829,7 +829,7 @@ function App() {
               <div className="cat-member-card animate-card">
                 <div className="cat-member-photo-container">
                   <img 
-                    src="/src/assets/images/rania.jpg" 
+                    src="/images/rania.jpg" 
                     alt="Rania Fatnassi" 
                     className="cat-member-photo"
                   />
@@ -852,7 +852,7 @@ function App() {
               <div className="cat-member-card animate-card">
                 <div className="cat-member-photo-container">
                   <img 
-                    src="/src/assets/images/youssef-zrig.png" 
+                    src="/images/youssef-zrig.png" 
                     alt="Youssef Zrig" 
                     className="cat-member-photo"
                   />
@@ -887,7 +887,7 @@ function App() {
     <div className="cat-member-card tech-card animate-card">
       <div className="cat-member-photo-container">
         <img 
-          src="/src/assets/images/ftiti-marouan.png"
+          src="/images/ftiti-marouan.png"
           alt="Mohamed Marouan Ftiti"
           className="cat-member-photo"
         />
@@ -914,7 +914,7 @@ function App() {
     <div className="cat-member-card tech-card animate-card">
       <div className="cat-member-photo-container">
         <img 
-          src="/src/assets/images/houssine-benarous.png"
+          src="/images/houssine-benarous.png"
           alt="Houssine Ben Arous"
           className="cat-member-photo"
         />
@@ -941,7 +941,7 @@ function App() {
     <div className="cat-member-card tech-card animate-card">
       <div className="cat-member-photo-container">
         <img 
-          src="/src/assets/images/takwa.png"
+          src="/images/takwa.png"
           alt="Takwa Laffet"
           className="cat-member-photo"
         />
@@ -968,7 +968,7 @@ function App() {
     <div className="cat-member-card tech-card tech-card-center animate-card">
       <div className="cat-member-photo-container">
         <img 
-          src="/src/assets/images/ahed.png"
+          src="/images/ahed.png"
           alt="Ahed Assoudi"
           className="cat-member-photo"
         />
