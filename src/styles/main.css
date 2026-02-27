@@ -8269,6 +8269,40 @@ p {
   }
 }
 
+/* ── Fix: "robuste" overlapping subtitle on mobile ── */
+@media (max-width: 768px) {
+  .cat-tech .cat-title,
+  .cat-interface .cat-title,
+  .cat-header .cat-title {
+    margin-bottom: 32px;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 480px) {
+  .cat-tech .cat-title,
+  .cat-interface .cat-title,
+  .cat-header .cat-title {
+    margin-bottom: 36px;
+    line-height: 1.4;
+  }
+}
+
+/* ── Fix: avatar circles overlapping neighbouring cards on mobile ── */
+@media (max-width: 1024px) {
+  .tech-grid,
+  .cat-team-grid {
+    gap: 80px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .tech-grid,
+  .cat-team-grid {
+    gap: 90px !important;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════
    HERO – definitive responsive overrides
    Placed last in the cascade to win over any duplicate definitions
