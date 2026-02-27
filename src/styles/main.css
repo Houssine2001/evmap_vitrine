@@ -7890,6 +7890,12 @@ p {
   margin-top: -40px;
 }
 
+@media (max-width: 1024px) {
+  .sss {
+    margin-top: 0;
+  }
+}
+
 .cat-member-card {
   width: 100%;
   max-width: 360px;   /* même largeur que les autres cards */
@@ -8184,3 +8190,165 @@ p {
 .tech-icon.node { color: #3c873a; }
 .tech-icon.ts { color: #3178c6; }
 .tech-icon.supabase { color: #3ecf8e; }
+
+/* ═══════════════════════════════════════════════════════════════
+   TECHNICAL TEAM – 3-column diamond layout
+   Mohammed (gauche) │ Houssine (milieu) │ Takwa (droite)
+                     │    Ahed (centre)  │
+═══════════════════════════════════════════════════════════════ */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 0;
+}
+
+/* Ahed sits in column 2 (below Houssine) */
+.tech-card-center {
+  grid-column: 2;
+}
+
+/* ─────────────────────────────────────────────
+   TECH CARD – hover animation (float + glow)
+───────────────────────────────────────────── */
+.tech-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.4s ease,
+              border-color 0.3s ease;
+  position: relative;
+}
+
+.tech-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg,
+    rgba(0, 184, 148, 0.07) 0%,
+    rgba(9, 132, 227, 0.07) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tech-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tech-card:hover {
+  transform: translateY(-14px) scale(1.035);
+  box-shadow:
+    0 30px 60px rgba(0, 184, 148, 0.18),
+    0 10px 20px rgba(0, 0, 0, 0.08),
+    0 0 0 1.5px rgba(0, 184, 148, 0.30);
+  border-color: rgba(0, 184, 148, 0.35);
+}
+
+.tech-card:hover::after {
+  opacity: 1;
+}
+
+/* Responsive – tech grid */
+@media (max-width: 1024px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tech-card-center {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+  .tech-card-center {
+    grid-column: auto;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO – definitive responsive overrides
+   Placed last in the cascade to win over any duplicate definitions
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 5rem 0 3rem !important;
+  }
+  .hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .hero-text {
+    padding-right: 0 !important;
+    text-align: center !important;
+  }
+  .tagline {
+    text-align: center !important;
+  }
+  .brand-name {
+    font-size: 48px !important;
+  }
+  .hero-stats {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 1.5rem !important;
+  }
+  .hero-cta {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+  }
+  .app-mockup-container {
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+  .brand-name {
+    font-size: 36px !important;
+  }
+  .tagline {
+    font-size: 0.95rem !important;
+    text-align: center !important;
+  }
+  .hero-stats {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hero-cta {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .stat-value {
+    font-size: 1.25rem !important;
+  }
+  .stat-label {
+    font-size: 0.8rem !important;
+  }
+}

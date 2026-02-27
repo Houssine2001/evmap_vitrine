@@ -872,108 +872,126 @@ function App() {
             </div>
             
             {/* Technical Team */}
-            <div className="cat-technical-team fade-in-up">
-              <div className="cat-header">
-                <h2 className="cat-title fade-in-up">
-                  Centre De Développement de <span className="gradient-text">EVMapyTN</span>
-                </h2>
-              </div>
-              <br /><br />
-              
-              <div className="cat-team-grid tech-grid animate-stagger">
-                {/* Takoua Laffet */}
-                <div className="cat-member-card tech-card animate-card">
-                  <div className="cat-member-photo-container">
-                    <img 
-                      src="/src/assets/images/takwa.png" 
-                      alt="Takoua Laffet" 
-                      className="cat-member-photo"
-                    />
-                  </div>
-                  <div className="cat-member-content">
-                    <h3 className="cat-member-name">Takoua Laffet</h3>
-                    <div className="cat-member-role">Backend Developer</div>
-                    <p className="cat-member-bio">
-                      Architecture serveur, API REST, base de données et intégration OCPP pour la gestion des bornes de recharge.
-                    </p>
-                    <div className="cat-member-expertise">
-                      <span>Express</span>
-                      <span>API</span>
-                      <span>Base de données</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Houssine Ben Arous */}
-                <div className="cat-member-card tech-card animate-card">
-                  <div className="cat-member-photo-container">
-                    <img 
-                      src="/src/assets/images/houssine-benarous.png" 
-                      alt="Houssine Ben Arous" 
-                      className="cat-member-photo"
-                    />
-                  </div>
-                  <div className="cat-member-content">
-                    <h3 className="cat-member-name">Houssine Ben Arous</h3>
-                    <div className="cat-member-role">Mobile Developer</div>
-                    <p className="cat-member-bio">
-                      Développement d'applications mobiles iOS et Android avec intégration de paiement et recharge.
-                    </p>
-                    <div className="cat-member-expertise">
-                      <span>React Native</span>
-                      <span>iOS/Android</span>
-                      <span>Express</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Ahed Assoudi */}
-                <div className="cat-member-card tech-card animate-card">
-                  <div className="cat-member-photo-container">
-                    <img 
-                      src="/src/assets/images/ahed.png" 
-                      alt="Ahed Assoudi" 
-                      className="cat-member-photo"
-                    />
-                  </div>
-                  <div className="cat-member-content">
-                    <h3 className="cat-member-name">Ahed Assoudi</h3>
-                    <div className="cat-member-role">DevOps & Infrastructure</div>
-                    <p className="cat-member-bio">
-                      Infrastructure cloud, déploiement continu, monitoring et sécurité pour une plateforme haute disponibilité.
-                    </p>
-                    <div className="cat-member-expertise">
-                      <span>DevOps</span>
-                      <span>Cloud</span>
-                      <span>Sécurité</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Ftiti Mohamed Marouan */}
-                <div className="cat-member-card tech-card center-card animate-card">
-                  <div className="cat-member-photo-container">
-                    <img 
-                      src="/src/assets/images/ftiti-marouan.png" 
-                      alt="Ftiti Mohamed Marouan" 
-                      className="cat-member-photo"
-                    />
-                  </div>
-                  <div className="cat-member-content">
-                    <h3 className="cat-member-name">Ftiti Mohamed Marouan</h3>
-                    <div className="cat-member-role">Web Developer</div>
-                    <p className="cat-member-bio">
-                      Développement des interfaces utilisateur, intégration cartographique et optimisation des performances.
-                    </p>
-                    <div className="cat-member-expertise">
-                      <span>React</span>
-                      <span>JavaScript</span>
-                      <span>UI/UX</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="cat-technical-team fade-in-up">
+  <div className="cat-header">
+    <h2 className="cat-title fade-in-up">
+      Centre De Développement de <span className="gradient-text">EVMapyTN</span>
+    </h2>
+  </div>
+  <br /><br />
+
+  <div className="cat-team-grid tech-grid animate-stagger">
+
+    {/* Mohamed Marouan Ftiti – gauche */}
+    <div className="cat-member-card tech-card animate-card">
+      <div className="cat-member-photo-container">
+        <img 
+          src="/src/assets/images/ftiti-marouan.png"
+          alt="Mohamed Marouan Ftiti"
+          className="cat-member-photo"
+        />
+      </div>
+      <div className="cat-member-content">
+        <h3 className="cat-member-name">Mohamed Marouan Ftiti</h3>
+        <div className="cat-member-role">Frontend &amp; Backoffice Developer</div>
+        <p className="cat-member-bio">
+          Développement des interfaces web et du dashboard administrateur,
+          gestion des utilisateurs, stations et réservations avec une
+          attention particulière à l’expérience utilisateur.
+        </p>
+        <div className="cat-member-expertise">
+          <span>React.js</span>
+          <span>Laravel</span>
+          <span>JWT</span>
+          <span>Admin Dashboard</span>
+          <span>UX/UI</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Houssine Ben Arous – milieu */}
+    <div className="cat-member-card tech-card animate-card">
+      <div className="cat-member-photo-container">
+        <img 
+          src="/src/assets/images/houssine-benarous.png"
+          alt="Houssine Ben Arous"
+          className="cat-member-photo"
+        />
+      </div>
+      <div className="cat-member-content">
+        <h3 className="cat-member-name">Houssine Ben Arous</h3>
+        <div className="cat-member-role">Tech Lead / Backend Lead</div>
+        <p className="cat-member-bio">
+          Conception de l’architecture backend, développement des API REST,
+          gestion des bases de données, sécurité, performance et scalabilité
+          de la plateforme EVMapy.
+        </p>
+        <div className="cat-member-expertise">
+          <span>Node.js</span>
+          <span>Express</span>
+          <span>PostgreSQL</span>
+          <span>Docker</span>
+          <span>CI/CD</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Takwa Laffet – droite */}
+    <div className="cat-member-card tech-card animate-card">
+      <div className="cat-member-photo-container">
+        <img 
+          src="/src/assets/images/takwa.png"
+          alt="Takwa Laffet"
+          className="cat-member-photo"
+        />
+      </div>
+      <div className="cat-member-content">
+        <h3 className="cat-member-name">Takwa Laffet</h3>
+        <div className="cat-member-role">Backend / Sécurité & Qualité</div>
+        <p className="cat-member-bio">
+          Sécurisation des API, supervision CPMS, intégration OCPP,
+          monitoring, logs et amélioration continue de la qualité
+          et des performances du backend.
+        </p>
+        <div className="cat-member-expertise">
+          <span>Node.js</span>
+          <span>FastAPI</span>
+          <span>OWASP</span>
+          <span>Monitoring</span>
+          <span>DevSecOps</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Ahed Assoudi – sous Houssine (centre) */}
+    <div className="cat-member-card tech-card tech-card-center animate-card">
+      <div className="cat-member-photo-container">
+        <img 
+          src="/src/assets/images/ahed.png"
+          alt="Ahed Assoudi"
+          className="cat-member-photo"
+        />
+      </div>
+      <div className="cat-member-content">
+        <h3 className="cat-member-name">Ahed Assoudi</h3>
+        <div className="cat-member-role">IoT & Intégration Bornes (Phase d’évolution)</div>
+        <p className="cat-member-bio">
+          Intégration des bornes de recharge, systèmes embarqués et IoT,
+          communication terrain et vision Smart Energy pour l’évolution
+          future de la plateforme.
+        </p>
+        <div className="cat-member-expertise">
+          <span>IoT</span>
+          <span>ESP32</span>
+          <span>Raspberry Pi</span>
+          <span>MQTT</span>
+          <span>Smart Energy</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
           </div>
         </section>
 
