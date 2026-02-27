@@ -49,9 +49,18 @@ import { LuZap } from "react-icons/lu";
 // Custom hook for scroll animations
 const useScrollAnimation = (options = {}) => {
   const elementRef = useRef(null);
-  const observerRef = useRef(null);
 
   useEffect(() => {
+    const node = elementRef.current;
+    if (!node) return;
+
+    // If already visible on load (e.g. hero section), animate immediately
+    const rect = node.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      node.classList.add('animate-in');
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -62,28 +71,20 @@ const useScrollAnimation = (options = {}) => {
         });
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.08,
+        rootMargin: '0px 0px -50px 0px',
         ...options,
       }
     );
 
-    observerRef.current = observer;
+    observer.observe(node);
 
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, [options]);
+    return () => observer.disconnect();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const setRef = (node) => {
-    if (node) {
-      elementRef.current = node;
-      if (observerRef.current) {
-        observerRef.current.observe(node);
-      }
-    }
+    elementRef.current = node;
   };
 
   return { setRef };
