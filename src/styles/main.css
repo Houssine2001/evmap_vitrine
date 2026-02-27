@@ -4934,9 +4934,11 @@ p {
 .cat-screen-number {
   font-size: 3rem;
   font-weight: 700;
-  color: rgba(0, 184, 148, 0.1);
+  color: #00b894;
+  opacity: 0.55;
   line-height: 1;
   margin-bottom: 16px;
+  letter-spacing: -1px;
 }
 
 .cat-screen-info h4 {
@@ -6060,6 +6062,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
+  row-gap: 90px;
   margin-bottom: 80px;
 }
 
@@ -8292,14 +8295,14 @@ p {
 @media (max-width: 1024px) {
   .tech-grid,
   .cat-team-grid {
-    gap: 80px !important;
+    row-gap: 90px !important;
   }
 }
 
 @media (max-width: 600px) {
   .tech-grid,
   .cat-team-grid {
-    gap: 90px !important;
+    row-gap: 100px !important;
   }
 }
 
