@@ -1084,13 +1084,13 @@ function App() {
                       <div className="info-card-text">
                         <h4 className="info-card-title">Email</h4>
                         <div className="info-card-action">
-                          <a href="mailto:contact@evmapy.tn" className="info-contact-link">
-                            contact@evmapy.tn
+                          <a href="mailto:evmaptn@gmail.com" className="info-contact-link">
+                            evmaptn@gmail.com
                           </a>
                           <button 
                             className="info-copy-btn" 
                             onClick={() => {
-                              navigator.clipboard.writeText('contact@evmapy.tn');
+                              navigator.clipboard.writeText('evmaptn@gmail.com');
                             }}
                           >
                             Copier

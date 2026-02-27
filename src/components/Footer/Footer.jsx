@@ -131,7 +131,7 @@ export default function Footer({ scrollToSection }) {
               </div>
               <div className="contact-text">
                 <p>Email</p>
-                <a href="mailto:contact@evmapytn.tn">contact@evmapytn.tn</a>
+                <a href="mailto:contact@evmapytn.tn">evmaptn@gmail.com</a>
               </div>
             </div>
             <div className="contact-item">
@@ -140,7 +140,7 @@ export default function Footer({ scrollToSection }) {
               </div>
               <div className="contact-text">
                 <p>Téléphone</p>
-                <span>+216 XX XXX XXX</span>
+                <span>+216 23 961 611</span>
               </div>
             </div>
           </div>
