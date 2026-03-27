@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité — EvMapyTn</title>
+  <link rel="canonical" href="https://evmapy.tn/privacy" />
+  <style>
+    :root {
+      --primary:       #1A73AB;
+      --primary-dark:  #155D8A;
+      --primary-light: #E3F0F9;
+      --accent:        #1AA8A4;
+      --accent-light:  #D0FFF9;
+      --bg:            #F5F7FA;
+      --surface:       #FFFFFF;
+      --text:          #1A1D21;
+      --text-sec:      #5A6775;
+      --text-ter:      #8E99A4;
+      --border:        #E2E6EA;
+      --success:       #10B981;
+      --radius:        14px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* ── HEADER ── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 60%, #0d3f5f 100%);
+      color: #fff;
+      padding: 60px 20px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      background: rgba(26,168,164,.18);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,.06);
+      border-radius: 50%;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 12px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; margin-bottom: 10px; }
+    .hero p  { font-size: 15px; opacity: .85; max-width: 520px; margin: 0 auto; color: #fff; }
+
+    /* ── NAV PILL ── */
+    .nav-pill {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 20px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px rgba(26,115,171,.07);
+    }
+    .nav-pill a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--primary-light);
+      border-radius: 50px;
+      padding: 6px 16px;
+      transition: background .2s, color .2s;
+    }
+    .nav-pill a:hover { background: var(--primary); color: #fff; }
+
+    /* ── CONTENT ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 36px 20px 80px;
+    }
+    .updated-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 5px 14px;
+      margin-bottom: 32px;
+    }
+
+    /* ── SECTION CARD ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 16px rgba(26,115,171,.05);
+      transition: box-shadow .2s;
+    }
+    .card:hover { box-shadow: 0 4px 24px rgba(26,115,171,.1); }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .icon-wrap {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .card-header h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    p { color: var(--text-sec); font-size: 14.5px; margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── LIST ── */
+    .item-list { list-style: none; margin-top: 8px; }
+    .item-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-sec);
+    }
+    .item-list li:last-child { border-bottom: none; }
+    .item-list li .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .item-list li strong { color: var(--text); font-weight: 600; }
+
+    /* ── RIGHTS GRID ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .right-item {
+      background: var(--primary-light);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .right-item .ri { font-size: 20px; margin-bottom: 6px; }
+    .right-item strong { display: block; font-size: 13px; color: var(--primary); font-weight: 700; margin-bottom: 3px; }
+    .right-item span { font-size: 12px; color: var(--text-sec); }
+
+    /* ── CONTACT CARD ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .contact-item .ci { font-size: 20px; }
+    .contact-item span { font-size: 13px; color: var(--text); font-weight: 500; }
+
+    /* ── SECURITY PILLS ── */
+    .security-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .sec-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #ECFDF5;
+      border: 1px solid #6EE7B7;
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: #065F46;
+      font-weight: 500;
+    }
+    .sec-pill::before { content: '✓'; font-weight: 700; color: var(--success); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-ter);
+      font-size: 13px;
+    }
+    footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 480px) {
+      .hero { padding: 44px 16px 36px; }
+      .card { padding: 20px; }
+      .rights-grid, .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🔒 Politique de Confidentialité</div>
+  <h1>Vos données, notre responsabilité</h1>
+  <p>EvMapyTn — Application de localisation de bornes de recharge pour véhicules électriques en Tunisie</p>
+</div>
+
+<!-- NAV -->
+<nav class="nav-pill">
+  <a href="#intro">Introduction</a>
+  <a href="#donnees">Données</a>
+  <a href="#utilisation">Utilisation</a>
+  <a href="#securite">Sécurité</a>
+  <a href="#droits">Vos droits</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+  <div class="updated-tag">📅 Dernière mise à jour : 22 mars 2026</div>
+
+  <!-- 1. INTRODUCTION -->
+  <div class="card" id="intro">
+    <div class="card-header">
+      <div class="icon-wrap">👋</div>
+      <h2>Introduction</h2>
+    </div>
+    <p>Bienvenue sur <strong>EvMapyTn</strong>, votre application de localisation et de gestion de bornes de recharge pour véhicules électriques en Tunisie.</p>
+    <p>Nous nous engageons à protéger vos données personnelles et votre vie privée. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.</p>
+  </div>
+
+  <!-- 2. DONNÉES COLLECTÉES -->
+  <div class="card" id="donnees">
+    <div class="card-header">
+      <div class="icon-wrap">📋</div>
+      <h2>Données Collectées</h2>
+    </div>
+    <ul class="item-list">
+      <li><span class="dot"></span><div><strong>Informations de compte</strong> — nom, prénom, email, téléphone, modèle de véhicule</div></li>
+      <li><span class="dot"></span><div><strong>Localisation GPS</strong> — uniquement lorsque vous utilisez l'application, pour trouver les bornes à proximité</div></li>
+      <li><span class="dot"></span><div><strong>Historique de recharge</strong> — sessions de recharge et paiements effectués</div></li>
+      <li><span class="dot"></span><div><strong>Photos</strong> — images de bornes et de profil que vous choisissez d'envoyer</div></li>
+      <li><span class="dot"></span><div><strong>Préférences</strong> — stations favorites, paramètres d'application</div></li>
+      <li><span class="dot"></span><div><strong>Données techniques</strong> — type d'appareil, version de l'application</div></li>
+    </ul>
+  </div>
+
+  <!-- 3. UTILISATION -->
+  <div class="card" id="utilisation">
+    <div class="card-header">
+      <div class="icon-wrap">⚙️</div>
+      <h2>Utilisation des Données</h2>
+    </div>
+    <ul class="item-list">
+      <li><span class="dot"></span><div>Vous fournir nos services de localisation de bornes de recharge</div></li>
+      <li><span class="dot"></span><div>Gérer votre compte, sessions de recharge, réservations et paiements</div></li>
+      <li><span class="dot"></span><div>Améliorer l'expérience utilisateur et nos services</div></li>
+      <li><span class="dot"></span><div>Vous envoyer des notifications importantes relatives à votre compte</div></li>
+      <li><span class="dot"></span><div>Assurer la sécurité et l'intégrité de la plateforme</div></li>
+    </ul>
+  </div>
+
+  <!-- 4. SÉCURITÉ -->
+  <div class="card" id="securite">
+    <div class="card-header">
+      <div class="icon-wrap">🛡️</div>
+      <h2>Stockage & Sécurité</h2>
+    </div>
+    <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données :</p>
+    <div class="security-list">
+      <span class="sec-pill">Tokens chiffrés sur l'appareil</span>
+      <span class="sec-pill">Communications HTTPS</span>
+      <span class="sec-pill">Mots de passe hachés</span>
+      <span class="sec-pill">Stockage cloud sécurisé</span>
+      <span class="sec-pill">Données jamais vendues</span>
+    </div>
+  </div>
+
+  <!-- 5. PARTAGE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="icon-wrap">🤝</div>
+      <h2>Partage des Données</h2>
+    </div>
+    <p>Nous ne vendons jamais vos données personnelles. Vos informations peuvent être partagées uniquement avec :</p>
+    <ul class="item-list">
+      <li><span class="dot"></span><div><strong>Opérateurs de bornes</strong> — pour traiter vos sessions et réservations</div></li>
+      <li><span class="dot"></span><div><strong>Prestataires de paiement</strong> — pour sécuriser vos transactions</div></li>
+      <li><span class="dot"></span><div><strong>Services d'hébergement</strong> — stockage sécurisé via Supabase</div></li>
+    </ul>
+  </div>
+
+  <!-- 6. VOS DROITS -->
+  <div class="card" id="droits">
+    <div class="card-header">
+      <div class="icon-wrap">✋</div>
+      <h2>Vos Droits</h2>
+    </div>
+    <div class="rights-grid">
+      <div class="right-item"><div class="ri">👁️</div><strong>Accès</strong><span>Consulter vos données depuis votre profil</span></div>
+      <div class="right-item"><div class="ri">✏️</div><strong>Rectification</strong><span>Modifier vos informations à tout moment</span></div>
+      <div class="right-item"><div class="ri">🗑️</div><strong>Effacement</strong><span>Supprimer votre compte depuis les paramètres</span></div>
+      <div class="right-item"><div class="ri">📦</div><strong>Portabilité</strong><span>Obtenir une copie de vos données sur demande</span></div>
+    </div>
+  </div>
+
+  <!-- 7. MODIFICATIONS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="icon-wrap">🔄</div>
+      <h2>Mises à Jour</h2>
+    </div>
+    <p>Cette politique de confidentialité peut être mise à jour périodiquement. Nous vous informerons de tout changement important par notification dans l'application.</p>
+  </div>
+
+  <!-- 8. CONTACT -->
+  <div class="card" id="contact">
+    <div class="card-header">
+      <div class="icon-wrap">✉️</div>
+      <h2>Nous Contacter</h2>
+    </div>
+    <p>Pour toute question concernant cette politique de confidentialité ou l'utilisation de vos données :</p>
+    <div class="contact-grid">
+      <div class="contact-item"><span class="ci">📧</span><span>evmaptn@gmail.com</span></div>
+      <div class="contact-item"><span class="ci">📞</span><span>+216 23 961 611</span></div>
+      <div class="contact-item"><span class="ci">📍</span><span>Tunis, Tunisie</span></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 <strong>EvMapyTn</strong> — Tous droits réservés &nbsp;·&nbsp; <a href="/terms">Conditions d'utilisation</a> &nbsp;·&nbsp; <a href="/">Accueil</a></p>
+</footer>
+
+</body>
+</html>

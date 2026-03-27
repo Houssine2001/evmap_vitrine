@@ -1,0 +1,6 @@
+# Static HTML pages — serve before the SPA catch-all
+/privacy    /privacy.html   200
+/terms      /terms.html     200
+
+# SPA fallback — must come LAST
+/*          /index.html     200
