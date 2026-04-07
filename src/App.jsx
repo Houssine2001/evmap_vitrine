@@ -402,7 +402,7 @@ function App() {
                   </p>
                   <div className="highlight-author">
                     <span className="author-name">Nassim Eddaly</span>
-                    <span className="author-role">CTO EVMapyTN - Tunis</span>
+                    <span className="author-role">COO EVMapyTN - Tunis</span>
                   </div>
                 </div>
               </div>
