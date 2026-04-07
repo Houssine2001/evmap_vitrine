@@ -815,8 +815,7 @@ function App() {
                   <h3 className="cat-member-name">Nassim Eddaly</h3>
                   <div className="cat-member-role">COO & Co-founder</div>
                   <p className="cat-member-bio">
-                    Supérvision architecture technique, Mobilité électrique, systèmes et interopérabilité OCPP.
-                  </p>
+Pilotage opérations, alignement produit-marché, supervision technique et partenariats.                  </p>
                   <div className="cat-member-expertise">
                     <span>Architecture</span>
                     <span>Stratégie</span>
