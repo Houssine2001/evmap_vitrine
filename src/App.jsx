@@ -30,7 +30,7 @@ import {
 import {
   SiJavascript,
   SiTypescript,
-  SiSupabase,
+  SiPostgresql,
   SiOpenstreetmap,
   SiJsonwebtokens,
   SiLeaflet
@@ -596,24 +596,24 @@ function App() {
                   </div>
                 </div>
                 
-                {/* Screen 3 - Payment */}
+                {/* Screen 3 - Interactive Map */}
                 <div className="cat-screen-card animate-card">
                   <div className="cat-screen-preview">
                     <div className="cat-screen-frame">
                       <img 
-                        src="/images/paiement.png" 
-                        alt="Paiement EVMapTN"
+                        src="/images/cart.png" 
+                        alt="Carte Interactive EVMapTN"
                         className="cat-screen-image"
                       />
                     </div>
                     <div className="cat-screen-info">
                       <div className="cat-screen-number">03</div>
-                      <h4>Paiement sécurisé</h4>
-                      <p>Transactions rapides et sécurisées</p>
+                      <h4>Carte interactive des stations</h4>
+                      <p>Localisez les stations de recharge en temps réel</p>
                       <ul className="cat-screen-features">
-                        <li>Multiples modes de paiement</li>
-                        <li>Validation instantanée</li>
-                        <li>Reçu électronique</li>
+                        <li>Géolocalisation précise</li>
+                        <li>Statut en temps réel</li>
+                        <li>Filtres et recherche avancée</li>
                       </ul>
                     </div>
                   </div>
@@ -687,8 +687,8 @@ function App() {
       </div>
 
       <div className="cat-stack-item">
-        <SiSupabase className="tech-icon supabase" />
-        <span>Supabase</span>
+        <SiPostgresql className="tech-icon postgresql" />
+        <span>PostgreSQL</span>
       </div>
     </div>
 

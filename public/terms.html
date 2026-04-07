@@ -1,361 +1,296 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conditions d'Utilisation — EvMapyTn</title>
   <link rel="canonical" href="https://evmapy.tn/terms" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary:       #1A73AB;
-      --primary-dark:  #155D8A;
-      --primary-light: #E3F0F9;
-      --accent:        #1AA8A4;
-      --accent-light:  #D0FFF9;
-      --bg:            #F5F7FA;
-      --surface:       #FFFFFF;
-      --text:          #1A1D21;
-      --text-sec:      #5A6775;
-      --text-ter:      #8E99A4;
-      --border:        #E2E6EA;
-      --error:         #EF4444;
-      --error-light:   #FEF2F2;
-      --radius:        14px;
+      --brand:#1A73AB;--brand-dark:#155D8A;--brand-soft:#EBF4FB;--brand-border:#C7DEF0;
+      --accent:#1AA8A4;--accent-soft:#F0FDFB;--accent-border:#A7F3E8;
+      --bg:#F8FAFC;--surface:#FFFFFF;--text:#0F172A;--text-2:#475569;--text-3:#94A3B8;
+      --border:#E2E8F0;--red:#DC2626;--red-soft:#FEF2F2;--red-border:#FECACA;--r:8px;
     }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
-    }
-
-    /* ── HEADER ── */
-    .hero {
-      background: linear-gradient(135deg, var(--accent) 0%, #147d7a 60%, #0d5f5d 100%);
-      color: #fff;
-      padding: 60px 20px 50px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 260px; height: 260px;
-      background: rgba(26,115,171,.18);
-      border-radius: 50%;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -40px;
-      width: 200px; height: 200px;
-      background: rgba(255,255,255,.06);
-      border-radius: 50%;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.3);
-      border-radius: 50px;
-      padding: 6px 16px;
-      font-size: 12px;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-    .hero h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; margin-bottom: 10px; }
-    .hero p  { font-size: 15px; opacity: .85; max-width: 520px; margin: 0 auto; color: #fff; }
-
-    /* ── NAV PILL ── */
-    .nav-pill {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      padding: 20px 16px;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 12px rgba(26,168,164,.07);
-    }
-    .nav-pill a {
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent);
-      background: var(--accent-light);
-      border-radius: 50px;
-      padding: 6px 16px;
-      transition: background .2s, color .2s;
-    }
-    .nav-pill a:hover { background: var(--accent); color: #fff; }
-
-    /* ── CONTENT ── */
-    .container {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 36px 20px 80px;
-    }
-    .updated-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: 50px;
-      padding: 5px 14px;
-      margin-bottom: 32px;
-    }
-
-    /* ── SECTION CARD ── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 16px rgba(26,168,164,.05);
-      transition: box-shadow .2s;
-    }
-    .card:hover { box-shadow: 0 4px 24px rgba(26,168,164,.1); }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .icon-wrap {
-      width: 40px; height: 40px;
-      border-radius: 10px;
-      background: var(--accent-light);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-    .card-header h2 {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text);
-    }
-    p { color: var(--text-sec); font-size: 14.5px; margin-bottom: 10px; }
-    p:last-child { margin-bottom: 0; }
-
-    /* ── LIST ── */
-    .item-list { list-style: none; margin-top: 8px; }
-    .item-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 9px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
-      color: var(--text-sec);
-    }
-    .item-list li:last-child { border-bottom: none; }
-    .item-list li .dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 6px;
-    }
-    .item-list li .dot-red {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--error);
-      flex-shrink: 0;
-      margin-top: 6px;
-    }
-    .item-list li strong { color: var(--text); font-weight: 600; }
-
-    /* ── FORBIDDEN BLOCK ── */
-    .forbidden-card {
-      background: var(--error-light);
-      border: 1px solid #FECACA;
-      border-radius: var(--radius);
-      padding: 20px 24px;
-    }
-    .forbidden-card .item-list li { border-color: #FECACA; }
-
-    /* ── CONTACT CARD ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 10px;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px;
-    }
-    .contact-item .ci { font-size: 20px; }
-    .contact-item span { font-size: 13px; color: var(--text); font-weight: 500; }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 32px 20px;
-      border-top: 1px solid var(--border);
-      color: var(--text-ter);
-      font-size: 13px;
-    }
-    footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
-
-    @media (max-width: 480px) {
-      .hero { padding: 44px 16px 36px; }
-      .card { padding: 20px; }
-      .contact-grid { grid-template-columns: 1fr; }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
+    .topbar{height:54px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;position:sticky;top:0;z-index:100}
+    .topbar-logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+    .logo-mark{width:28px;height:28px;background:var(--brand);border-radius:7px;display:flex;align-items:center;justify-content:center}
+    .logo-mark svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .topbar-logo span{font-size:15px;font-weight:700;color:var(--text);letter-spacing:-.2px}
+    .topbar-nav{display:flex;align-items:center;gap:2px}
+    .topbar-nav a{font-size:13px;font-weight:500;color:var(--text-2);text-decoration:none;padding:6px 12px;border-radius:6px;transition:background .15s,color .15s}
+    .topbar-nav a:hover{background:var(--bg);color:var(--text)}
+    .topbar-nav a.active{background:var(--accent-soft);color:var(--accent)}
+    .page-header{background:var(--surface);border-bottom:1px solid var(--border);padding:36px 24px 28px}
+    .page-header-inner{max-width:740px;margin:0 auto}
+    .breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);margin-bottom:18px}
+    .breadcrumb a{color:var(--text-3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--brand)}
+    .page-tag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;border-radius:4px;padding:4px 10px;margin-bottom:14px}
+    .page-tag svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .page-header h1{font-size:clamp(22px,3.5vw,28px);font-weight:700;letter-spacing:-.4px;color:var(--text);line-height:1.25;margin-bottom:14px}
+    .meta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+    .meta-chip{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--text-3)}
+    .meta-chip svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .section-nav{background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+    .section-nav::-webkit-scrollbar{display:none}
+    .section-nav-inner{max-width:740px;margin:0 auto;display:flex;padding:0 24px}
+    .section-nav a{flex-shrink:0;font-size:13px;font-weight:500;color:var(--text-2);text-decoration:none;padding:12px 14px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;white-space:nowrap}
+    .section-nav a:hover{color:var(--text);border-bottom-color:var(--border)}
+    main{max-width:740px;margin:0 auto;padding:40px 24px 100px}
+    .intro-block{background:var(--accent-soft);border:1px solid var(--accent-border);border-left:3px solid var(--accent);border-radius:var(--r);padding:18px 22px;margin-bottom:40px}
+    .intro-block p{font-size:14px;color:#134e4a;line-height:1.75}
+    .intro-block p+p{margin-top:8px}
+    .section{margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--border)}
+    .section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .section-label{font-size:11px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+    .section h2{font-size:18px;font-weight:700;letter-spacing:-.3px;color:var(--text);margin-bottom:16px;line-height:1.3}
+    .section p{font-size:14.5px;color:var(--text-2);line-height:1.85;margin-bottom:12px}
+    .section p:last-child{margin-bottom:0}
+    .item-list{list-style:none}
+    .item-list li{display:flex;gap:14px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-2);line-height:1.75}
+    .item-list li:last-child{border-bottom:none;padding-bottom:0}
+    .il-icon{width:32px;height:32px;border-radius:7px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .il-icon svg{width:14px;height:14px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .item-list li strong{color:var(--text);font-weight:600}
+    .forbidden-block{background:var(--red-soft);border:1px solid var(--red-border);border-radius:var(--r);padding:20px 22px;margin-top:16px}
+    .forbidden-block .note{font-size:13px;font-weight:500;color:var(--red);margin-bottom:12px}
+    .forbidden-list{list-style:none}
+    .forbidden-list li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--red-border);font-size:14px;color:#7f1d1d;line-height:1.7}
+    .forbidden-list li:last-child{border-bottom:none;padding-bottom:0}
+    .f-dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:8px}
+    .notice-block{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;margin-top:16px}
+    .notice-block p{font-size:13.5px;color:var(--text-2);line-height:1.7;margin:0}
+    .notice-block a{color:var(--brand);font-weight:500;text-decoration:none}
+    .notice-block a:hover{text-decoration:underline}
+    .contact-stack{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+    .contact-row{display:flex;align-items:center;gap:12px;padding:13px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);font-size:14px;font-weight:500;color:var(--text);text-decoration:none;transition:border-color .15s}
+    .contact-row:hover{border-color:var(--accent)}
+    .contact-row svg{width:16px;height:16px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+    footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center}
+    footer p{font-size:13px;color:var(--text-3)}
+    footer p+p{margin-top:6px}
+    footer a{color:var(--brand);text-decoration:none;font-weight:500}
+    footer a:hover{text-decoration:underline}
+    @media(max-width:540px){
+      .topbar{padding:0 16px}.page-header{padding:24px 16px 20px}
+      main{padding:28px 16px 80px}.section-nav-inner{padding:0 16px}
     }
   </style>
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-badge">📄 Conditions d'Utilisation</div>
-  <h1>Les règles du jeu, clairement</h1>
-  <p>EvMapyTn — Application de localisation de bornes de recharge pour véhicules électriques en Tunisie</p>
+<header class="topbar">
+  <a href="/" class="topbar-logo">
+    <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <span>EvMapyTn</span>
+  </a>
+  <nav class="topbar-nav">
+    <a href="/terms" class="active">Conditions</a>
+    <a href="/privacy">Confidentialité</a>
+    <a href="/">Accueil</a>
+  </nav>
+</header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <nav class="breadcrumb">
+      <a href="/">evmapy.tn</a>
+      <span>›</span>
+      <span>Conditions d'utilisation</span>
+    </nav>
+    <div class="page-tag">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+      Conditions d'utilisation
+    </div>
+    <h1>Conditions d'Utilisation</h1>
+    <div class="meta-row">
+      <div class="meta-chip">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        En vigueur depuis le 7 avril 2026
+      </div>
+      <div class="meta-chip">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        Lecture : environ 5 minutes
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- NAV -->
-<nav class="nav-pill">
-  <a href="#acceptation">Acceptation</a>
-  <a href="#service">Service</a>
-  <a href="#compte">Compte</a>
-  <a href="#regles">Règles</a>
-  <a href="#responsabilite">Responsabilité</a>
-  <a href="#contact">Contact</a>
+<nav class="section-nav">
+  <div class="section-nav-inner">
+    <a href="#acceptation">Acceptation</a>
+    <a href="#service">Service</a>
+    <a href="#compte">Compte</a>
+    <a href="#regles">Règles d'usage</a>
+    <a href="#ip">Propriété intellectuelle</a>
+    <a href="#responsabilite">Responsabilité</a>
+    <a href="#droit">Droit applicable</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<div class="container">
+<main>
 
-  <div class="updated-tag">📅 Dernière mise à jour : 22 mars 2026</div>
-
-  <!-- 1. ACCEPTATION -->
-  <div class="card" id="acceptation">
-    <div class="card-header">
-      <div class="icon-wrap">✅</div>
-      <h2>Acceptation des Conditions</h2>
-    </div>
-    <p>En utilisant l'application <strong>EvMapyTn</strong>, vous acceptez les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser l'application.</p>
-    <p>EvMapyTn se réserve le droit de modifier ces conditions à tout moment. Les modifications prennent effet dès leur publication dans l'application.</p>
+  <div class="intro-block">
+    <p>En utilisant l'application EvMapyTn, vous acceptez pleinement les présentes conditions. Veuillez les lire attentivement avant d'utiliser le service.</p>
+    <p>EvMapyTn se réserve le droit de modifier ces conditions à tout moment. Votre utilisation continue du service après publication vaut acceptation des nouvelles conditions.</p>
   </div>
 
-  <!-- 2. SERVICE -->
-  <div class="card" id="service">
-    <div class="card-header">
-      <div class="icon-wrap">⚡</div>
-      <h2>Description du Service</h2>
-    </div>
+  <section class="section" id="acceptation">
+    <div class="section-label">01 — Acceptation</div>
+    <h2>Acceptation des conditions</h2>
+    <p>L'accès et l'utilisation de l'application EvMapyTn impliquent l'acceptation sans réserve des présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, vous devez cesser d'utiliser le service immédiatement.</p>
+    <p>Ces conditions s'appliquent à tous les utilisateurs de l'application, qu'ils disposent ou non d'un compte enregistré.</p>
+  </section>
+
+  <section class="section" id="service">
+    <div class="section-label">02 — Service</div>
+    <h2>Ce que propose EvMapyTn</h2>
+    <p>EvMapyTn est une application mobile qui vous permet de :</p>
     <ul class="item-list">
-      <li><span class="dot"></span><div>Localiser les bornes de recharge pour véhicules électriques en Tunisie</div></li>
-      <li><span class="dot"></span><div>Consulter les informations détaillées des stations (connecteurs, puissance, tarifs)</div></li>
-      <li><span class="dot"></span><div>Réserver des créneaux de recharge</div></li>
-      <li><span class="dot"></span><div>Soumettre des suggestions de nouvelles stations</div></li>
-      <li><span class="dot"></span><div>Laisser des avis et évaluations sur les stations</div></li>
-      <li><span class="dot"></span><div>Gérer les réclamations liées aux bornes de recharge</div></li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>Localiser les bornes de recharge pour véhicules électriques disponibles en Tunisie</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div>Consulter les informations détaillées des stations (connecteurs disponibles, puissance, tarification)</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div>Réserver des créneaux de recharge et gérer vos sessions en temps réel via le protocole OCPP</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/></svg></div>
+        <div>Déposer des avis et évaluations sur les stations que vous avez visitées</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+        <div>Soumettre des suggestions de nouvelles stations avec photos à l'appui</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div>Créer, suivre et gérer des réclamations liées aux bornes ou à la facturation</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+        <div>Recevoir des notifications sur l'état de vos réservations, sessions et réponses du support</div>
+      </li>
     </ul>
-  </div>
+    <p style="margin-top:16px;font-size:13.5px;color:var(--text-3)">EvMapyTn est un service en développement continu. Des fonctionnalités peuvent être ajoutées, modifiées ou supprimées à tout moment.</p>
+  </section>
 
-  <!-- 3. COMPTE -->
-  <div class="card" id="compte">
-    <div class="card-header">
-      <div class="icon-wrap">👤</div>
-      <h2>Compte Utilisateur</h2>
-    </div>
-    <p>Pour accéder à certaines fonctionnalités, vous devez créer un compte. Vous êtes responsable de :</p>
+  <section class="section" id="compte">
+    <div class="section-label">03 — Compte utilisateur</div>
+    <h2>Votre compte et vos responsabilités</h2>
+    <p>Pour accéder à certaines fonctionnalités, vous devez créer un compte. Vous êtes seul responsable de :</p>
     <ul class="item-list">
-      <li><span class="dot"></span><div>La confidentialité de vos identifiants de connexion</div></li>
-      <li><span class="dot"></span><div>L'exactitude des informations fournies lors de l'inscription</div></li>
-      <li><span class="dot"></span><div>Toute activité effectuée depuis votre compte</div></li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div>La confidentialité de vos identifiants de connexion et la sécurité de votre mot de passe</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>L'exactitude des informations personnelles fournies lors de l'inscription et lors de leur mise à jour</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div>Toute activité effectuée depuis votre compte, y compris les réservations et les paiements</div>
+      </li>
     </ul>
-    <p style="margin-top:12px">Vous pouvez supprimer votre compte à tout moment depuis les <strong>Paramètres</strong> de l'application. La suppression entraîne l'effacement définitif de toutes vos données personnelles.</p>
-  </div>
-
-  <!-- 4. RÈGLES -->
-  <div class="card forbidden-card" id="regles">
-    <div class="card-header">
-      <div class="icon-wrap" style="background:#FEF2F2">🚫</div>
-      <h2>Utilisation Acceptable</h2>
+    <div class="notice-block">
+      <p>Pour demander la suppression de votre compte et l'effacement de vos données, contactez-nous à <a href="mailto:evmaptn@gmail.com">evmaptn@gmail.com</a>. Votre demande sera traitée dans un délai de 30 jours.</p>
     </div>
-    <p style="color:var(--text-sec)">Vous vous engagez à ne pas :</p>
+  </section>
+
+  <section class="section" id="regles">
+    <div class="section-label">04 — Règles d'usage</div>
+    <h2>Utilisation acceptable du service</h2>
+    <p>En utilisant EvMapyTn, vous vous engagez à respecter les règles suivantes. Tout manquement peut entraîner la suspension ou la suppression de votre compte.</p>
+    <div class="forbidden-block">
+      <p class="note">Il est strictement interdit de :</p>
+      <ul class="forbidden-list">
+        <li><span class="f-dot"></span><div>Publier des informations fausses, inexactes ou trompeuses sur les stations de recharge</div></li>
+        <li><span class="f-dot"></span><div>Utiliser l'application à des fins illégales, frauduleuses ou non autorisées</div></li>
+        <li><span class="f-dot"></span><div>Tenter de perturber, compromettre ou attaquer l'infrastructure de l'application</div></li>
+        <li><span class="f-dot"></span><div>Publier du contenu offensant, diffamatoire, haineux ou inapproprié dans les avis</div></li>
+        <li><span class="f-dot"></span><div>Créer plusieurs comptes dans le but de contourner des restrictions ou des sanctions</div></li>
+        <li><span class="f-dot"></span><div>Collecter, extraire ou scraper les données d'autres utilisateurs sans autorisation explicite</div></li>
+        <li><span class="f-dot"></span><div>Tenter de décompiler, faire de l'ingénierie inverse ou accéder au code source de l'application</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="ip">
+    <div class="section-label">05 — Propriété intellectuelle</div>
+    <h2>Droits sur le contenu et le code</h2>
+    <p>L'application EvMapyTn, son code source, son design, ses illustrations et l'ensemble de son contenu éditorial sont la propriété exclusive de EvMapyTn. Toute reproduction, distribution, adaptation ou exploitation commerciale non autorisée est strictement interdite.</p>
+    <p>Les données cartographiques sont fournies par <strong>OpenStreetMap</strong> et ses contributeurs, sous licence <strong>Open Database License (ODbL)</strong>. Toute utilisation des données cartographiques est soumise aux conditions de cette licence.</p>
+  </section>
+
+  <section class="section" id="responsabilite">
+    <div class="section-label">06 — Responsabilité</div>
+    <h2>Limitation de responsabilité</h2>
+    <p>Les informations sur les bornes de recharge affichées dans l'application sont fournies à titre indicatif. EvMapyTn ne garantit pas :</p>
     <ul class="item-list">
-      <li><span class="dot-red"></span><div>Publier des informations fausses ou trompeuses sur les stations</div></li>
-      <li><span class="dot-red"></span><div>Utiliser l'application à des fins illégales ou non autorisées</div></li>
-      <li><span class="dot-red"></span><div>Tenter de perturber ou compromettre le fonctionnement de l'application</div></li>
-      <li><span class="dot-red"></span><div>Publier du contenu offensant, diffamatoire ou inapproprié</div></li>
-      <li><span class="dot-red"></span><div>Collecter ou extraire des données d'autres utilisateurs</div></li>
-      <li><span class="dot-red"></span><div>Créer plusieurs comptes pour contourner des restrictions</div></li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div>La disponibilité en temps réel des bornes de recharge ni l'absence de panne ou de maintenance</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div>L'exactitude absolue des prix, horaires d'ouverture et caractéristiques techniques affichés</div>
+      </li>
+      <li>
+        <div class="il-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div>Le fonctionnement ininterrompu de l'application, notamment lors des opérations de maintenance</div>
+      </li>
     </ul>
-  </div>
+    <p style="margin-top:16px">EvMapyTn ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser l'application.</p>
 
-  <!-- 5. PROPRIÉTÉ INTELLECTUELLE -->
-  <div class="card">
-    <div class="card-header">
-      <div class="icon-wrap">🏆</div>
-      <h2>Propriété Intellectuelle</h2>
-    </div>
-    <p>L'application EvMapyTn, son contenu, son design et son code source sont la propriété exclusive de EvMapyTn. Toute reproduction, distribution ou modification non autorisée est strictement interdite.</p>
-    <p>Les données cartographiques sont fournies par <strong>OpenStreetMap</strong> et sont soumises à la licence Open Database License (ODbL).</p>
-  </div>
+    <div class="section-label" style="margin-top:28px">Résiliation</div>
+    <p>EvMapyTn se réserve le droit de suspendre ou de supprimer votre compte sans préavis en cas de violation des présentes conditions. Vous pouvez cesser d'utiliser le service à tout moment en nous contactant pour demander la clôture de votre compte.</p>
+  </section>
 
-  <!-- 6. RESPONSABILITÉ -->
-  <div class="card" id="responsabilite">
-    <div class="card-header">
-      <div class="icon-wrap">⚠️</div>
-      <h2>Limitation de Responsabilité</h2>
-    </div>
-    <p>EvMapyTn fournit les informations sur les bornes de recharge à titre indicatif. Nous ne garantissons pas :</p>
-    <ul class="item-list">
-      <li><span class="dot"></span><div>La disponibilité en temps réel des bornes de recharge</div></li>
-      <li><span class="dot"></span><div>L'exactitude absolue des prix, horaires et caractéristiques techniques</div></li>
-      <li><span class="dot"></span><div>Le fonctionnement ininterrompu de l'application</div></li>
-    </ul>
-    <p style="margin-top:12px">EvMapyTn ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation de l'application.</p>
-  </div>
+  <section class="section" id="droit">
+    <div class="section-label">07 — Droit applicable</div>
+    <h2>Juridiction et droit applicable</h2>
+    <p>Les présentes conditions d'utilisation sont régies et interprétées conformément au droit tunisien. En cas de litige relatif à l'utilisation de l'application ou à l'interprétation de ces conditions, les parties s'engagent à rechercher une solution amiable avant tout recours judiciaire.</p>
+    <p>À défaut de résolution amiable, tout litige sera porté devant les tribunaux compétents de <strong>Tunis, Tunisie</strong>.</p>
+  </section>
 
-  <!-- 7. DROIT APPLICABLE -->
-  <div class="card">
-    <div class="card-header">
-      <div class="icon-wrap">⚖️</div>
-      <h2>Droit Applicable</h2>
+  <section class="section" id="contact">
+    <div class="section-label">08 — Contact</div>
+    <h2>Nous contacter</h2>
+    <p>Pour toute question relative à ces conditions, signalement d'abus ou demande de suppression de compte :</p>
+    <div class="contact-stack">
+      <a href="mailto:evmaptn@gmail.com" class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        evmaptn@gmail.com
+      </a>
+      <a href="tel:+21623961611" class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.4 2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +216 23 961 611
+      </a>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Tunis, Tunisie
+      </div>
     </div>
-    <p>Les présentes conditions sont régies par le droit tunisien. Tout litige sera soumis aux tribunaux compétents de <strong>Tunis, Tunisie</strong>.</p>
-  </div>
+  </section>
 
-  <!-- 8. CONTACT -->
-  <div class="card" id="contact">
-    <div class="card-header">
-      <div class="icon-wrap">✉️</div>
-      <h2>Nous Contacter</h2>
-    </div>
-    <p>Pour toute question concernant ces conditions d'utilisation :</p>
-    <div class="contact-grid">
-      <div class="contact-item"><span class="ci">📧</span><span>evmaptn@gmail.com</span></div>
-      <div class="contact-item"><span class="ci">📞</span><span>+216 23 961 611</span></div>
-      <div class="contact-item"><span class="ci">📍</span><span>Tunis, Tunisie</span></div>
-    </div>
-  </div>
-
-</div>
+</main>
 
 <footer>
-  <p>© 2026 <strong>EvMapyTn</strong> — Tous droits réservés &nbsp;·&nbsp; <a href="/privacy">Politique de confidentialité</a> &nbsp;·&nbsp; <a href="/">Accueil</a></p>
+  <p>© 2026 <strong>EvMapyTn</strong> — Application de recharge pour véhicules électriques en Tunisie</p>
+  <p><a href="/privacy">Politique de confidentialité</a> &nbsp;·&nbsp; <a href="/">Retour à l'accueil</a></p>
 </footer>
 
 </body>
