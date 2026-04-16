@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+﻿import { useEffect, useState, useRef } from "react";
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import './styles/main.css';
@@ -1083,13 +1083,13 @@ Pilotage opérations, alignement produit-marché, supervision technique et parte
                       <div className="info-card-text">
                         <h4 className="info-card-title">Email</h4>
                         <div className="info-card-action">
-                          <a href="mailto:evmaptn@gmail.com" className="info-contact-link">
-                            evmaptn@gmail.com
+                          <a href="mailto:contact@evmapy.tn" className="info-contact-link">
+                            contact@evmapy.tn
                           </a>
                           <button 
                             className="info-copy-btn" 
                             onClick={() => {
-                              navigator.clipboard.writeText('evmaptn@gmail.com');
+                              navigator.clipboard.writeText('contact@evmapy.tn');
                             }}
                           >
                             Copier

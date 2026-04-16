@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import "../../styles/Footer.css";
 import logoIcon from "../../assets/images/evmapytn.png";
 import { FaMapMarkerAlt, FaBolt, FaEuroSign, FaPhone, FaEnvelope, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
@@ -131,7 +131,7 @@ export default function Footer({ scrollToSection }) {
               </div>
               <div className="contact-text">
                 <p>Email</p>
-                <a href="mailto:contact@evmapytn.tn">evmaptn@gmail.com</a>
+                <a href="mailto:contact@evmapy.tn">contact@evmapy.tn</a>
               </div>
             </div>
             <div className="contact-item">
